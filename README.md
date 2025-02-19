@@ -1,3 +1,2 @@
 # LordOfTheCoders
-lol
 Schoolproject
