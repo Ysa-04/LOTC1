@@ -1,0 +1,19 @@
+header, footer{
+    background-color: black;
+    color: #e3a722;
+}
+header img, footer img{
+    width: 10%;
+    height: auto;
+}
+footer > div, footer > p, footer > article {
+    flex: 1;
+    text-align: center;
+}
+*, header, footer{
+    font-family: 'lordOfTheRingsFont';
+}
+@font-face {
+    font-family: lordOfTheRingsFont;
+    src: url(../assets/ringbearer.medium.ttf);
+}
