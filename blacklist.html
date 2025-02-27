@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blacklist - Lord Of The Coders</title>
+    <title>Blacklist</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="nofollow" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="javascript/hamburger-menu.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/assets/lord-of-the-coders-logo.png">
+    <audio autoplay loop>
+        <!-- https://archive.org/details/TheLordOfTheRings_OST -->
+        <source src="/assets/theshire.mp3" type="audio/mpeg">
+    </audio>
 </head>
 <body>
-    <header>
-        <img src="assets/lord-of-the-coders-logo.png" alt="LordOfTheCodersLogo">
-        <article>
+    <header class="d-flex justify-content-between align-items-center">
+        <img src="assets/lord-of-the-coders-logo.png" alt="LordOfTheCodersLogo" class="d-flex justify-content-start">
+        <article class="p-2" class="d-flex justify-content-center" class="d-flex align-items-center">
             <h1>The One</h1>
             <p>By Lord Of The Coders</p>
         </article>
-        <nav>
-            <ul>
-                <li>🏠</li>
-                <li>❤️</li>
-                <li>🚫</li>
-                <li>🏆</li>
-            </ul>
-            <button>↪</button>
-        </nav>
+        <!-- https://www.flaticon.com/free-icon/lines_10092593?term=hamburger+menu&page=1&position=96&origin=search&related_id=10092593 -->
+        <img src="assets/menu.png" alt="hamburger menu" class="p-2" class="d-flex justify-content-end" id="hamburger-menu">
     </header>
+    <nav id="nav-menu" class="d-none">
+        <ul class="align-items-center text-right">
+            <li class="p-2" class="d-flex justify-content-center text-right"><a href="/homepage.html">🏠</a></li>
+            <li class="p-2" class="d-flex justify-content-center text-right"><a href="/favorite.html">❤️</a></li>
+            <li class="p-2" class="d-flex justify-content-center text-right"><a href="/blacklist.html">🚫</a></li>
+            <li class="p-2" class="d-flex justify-content-center text-right"><a href="/gamemode.html">🏆</a></li>
+            <li class="p-2" class="d-flex justify-content-center text-right"><a href="/index.html">↪</a></li>
+        </ul>
+    </nav>
     <main>
         <h2>Blacklist</h2>
         <article>
@@ -35,12 +46,15 @@
             <p>Reden: Ik voelde me bedreigd.</p>
         </article>
     </main>
-    <footer>
-        <p>&copy;Lord Of The Coders</p>
-        <!-- <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by riajulislam - Flaticon</a> -->
-        <a href="#"><img src="assets/linkedin.png" alt="linkedin"></a>
-        <!-- <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Freepik - Flaticon</a> -->
-        <a href="#"><img src="assets/github.png" alt="github"></a>
+    <footer class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-start"></div>
+        <p class="p-2" class="d-flex justify-content-center" class="d-flex align-items-center"><span style="font-family: 'Arial', sans-serif;">&copy;</span> Lord Of The Coders</p>
+        <article class="align-items-center text-right h-100">
+            <!-- <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by riajulislam - Flaticon</a> -->
+            <a href="https://www.linkedin.com/in/exan-fabry-5194ab231/" class="me-2"><img src="assets/linkedin.png" alt="linkedin"></a>
+            <!-- <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Freepik - Flaticon</a> -->
+            <a href="https://github.com/ExanFabry/LordOfTheCoders"><img src="assets/github.png" alt="github"></a>
+        </article>
     </footer>
 </body>
 </html>
