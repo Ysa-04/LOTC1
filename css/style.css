@@ -1,19 +1,107 @@
+/*Header*/
+
+/*Header and footer*/
+header h1, header p, footer p{
+    text-shadow: 1px 1px 1px white;
+}
 header, footer{
     background-color: black;
     color: #e3a722;
 }
-header img, footer img{
-    width: 10%;
+header img{
+    width: 8%;
     height: auto;
 }
-footer > div, footer > p, footer > article {
-    flex: 1;
-    text-align: center;
+#hamburger-menu{
+    width: 5%;
+    height: auto;
+}
+header h1{
+    margin-top: 10%;
+    font-size: 2rem;
+}
+header article p, footer p {
+    font-size: 0.8rem;
 }
 *, header, footer{
     font-family: 'lordOfTheRingsFont';
 }
+header article{
+    margin-right: 5%;
+}
+
+/*Footer*/
+footer > div, footer > p, footer > article {
+    flex: 1;
+    text-align: center;
+}
+footer{
+    padding-right: 1%;
+}
+footer img{
+    max-width: 10%;
+    height: auto;
+}
+footer article{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+/*nav*/
+nav{
+    background-color: black;
+}
+nav a, nav a:hover{
+    color:#e3a722;
+}
+nav a:hover{
+    text-decoration: none;
+    text-shadow: 1px 1px 15px white;
+}
+nav a{
+    padding: 1%;
+}
+
+/*Font*/
 @font-face {
     font-family: lordOfTheRingsFont;
     src: url(../assets/ringbearer.medium.ttf);
+}
+
+@media (max-width: 1080px) {
+    header article h1 {
+        font-size: 1.5rem;
+    }
+    header article p {
+        font-size: 0.6rem;
+    }
+    header img, #hamburger-menu{
+        width: 10%;
+        height: auto;
+    }
+    header article{
+        margin-right: 0%;
+    }
+}
+
+@media (max-width: 576px) {
+    header article h1 {
+        font-size: 1.5rem;
+    }
+    header article p {
+        font-size: 0.6rem;
+    }
+    header img, #hamburger-menu{
+        width: 15%;
+    }
+    footer{
+        padding-right: 3%;
+    }
+    footer img{
+        max-width: 20%;
+        height: auto;
+    }
+    header article{
+        margin-right: 5%;
+    }
 }
