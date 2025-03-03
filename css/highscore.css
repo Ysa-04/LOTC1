@@ -20,3 +20,10 @@ main image, .text{
     margin: 1%;
     background-color: #e3a722;
 }
+main article{
+    min-width: 50%;
+}
+.scores{
+    margin-left: -15%;
+    margin-right: -10%;
+}
