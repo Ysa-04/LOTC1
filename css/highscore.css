@@ -1,5 +1,8 @@
 body{
     background-image: url("/assets/highscores-startpage-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 main{
     padding-top: 5%;
@@ -26,4 +29,27 @@ main article{
 .scores{
     margin-left: -15%;
     margin-right: -10%;
+}
+/* Media querries */
+@media (max-width: 1025px) {
+    main image{
+        min-width: 100%;
+    }
+    main{
+        padding-top: 30%;
+        padding-bottom: 30%;
+    }
+}
+@media (max-width: 835px) {
+    .scores{
+        margin-left: -25%;
+        margin-right: -20%;
+    }
+    main image{
+        min-width: 100%;
+    }
+    main{
+        padding-top: 25%;
+        padding-bottom: 25%;
+    }
 }

@@ -1,6 +1,10 @@
 /* General */
 body {
     background-image: url("/assets/landing-page-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 /* Main */
