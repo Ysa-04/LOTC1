@@ -27,6 +27,12 @@ main a, main section{
 .wrong-project:hover, .wrong-project:active, .wrong-project:focus{
     box-shadow: 5px 10px 15px red;
 }
+.right-project:hover, .right-project:active, .right-project:focus{
+    box-shadow: 5px 10px 15px green;
+}
+main img:hover{
+    transform: scale(1.05);
+}
 
 /* Footer */
 footer{
