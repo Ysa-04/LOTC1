@@ -1,9 +1,9 @@
 /*Header*/
 
 /*Header and footer*/
-header h1, header p, footer p{
+/*header h1, header p, footer p{
     text-shadow: 1px 1px 1px white;
-}
+} */
 header, footer{
     background-color: black;
     color: #e3a722;
