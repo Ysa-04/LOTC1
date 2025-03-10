@@ -1,0 +1,24 @@
+body {
+    background-image: url("/assets/10-rounds-wrong-answers-background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+main{
+    
+    padding: 15px;
+}
+h2{
+    border: 2px solid;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #c3b07d;
+}
+section{
+    border: 2px solid;
+    background-color: #6f6340 ;
+    border-radius: 10px;
+}
+.listkader{
+    border: 2px solid;
+}
