@@ -77,3 +77,6 @@ form p a {
 form p a:hover {
     text-decoration: underline;
 }
+footer article {
+    box-shadow: none;
+}
