@@ -5,7 +5,6 @@ body {
     background-size:cover;
 }
 
-
 main {
     display: flex;
     flex-direction: column;
@@ -13,6 +12,7 @@ main {
     justify-content: center;
     height: 100vh;
     text-align: center;
+    position: relative;
 }
 
 #the-lord-text {
@@ -23,12 +23,15 @@ main {
 }
 
 article {
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px #e3a722;
-    width: 300px;
     box-sizing: border-box;
 }
 
@@ -37,13 +40,25 @@ h2 {
     margin-bottom: 15px;
 }
 
+form {
+    width: 100%;
+}
+
+form article {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+    box-shadow: none;
+}
+
 form input {
     width: 100%;
     padding: 10px;
-    margin: 10px;
     border-radius: 5px;
     background: black;
     color: white;
+    text-align: center;
     box-sizing: border-box;
 }
 
@@ -62,22 +77,6 @@ form button:hover {
     transform: scale(1.05);
 }
 
-form div {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    white-space: nowrap;
-}
-
-form p a {
-    color: #e3a722;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-form p a:hover {
-    text-decoration: underline;
-}
 footer article {
     box-shadow: none;
 }
