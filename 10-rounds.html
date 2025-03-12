@@ -17,7 +17,7 @@
 </head>
 <body>
     <header class="d-flex justify-content-between align-items-center">
-        <img src="assets/lord-of-the-coders-logo.png" alt="LordOfTheCodersLogo" class="d-flex justify-content-start">
+        <img src="/assets/lord-of-the-coders-logo.png" alt="LordOfTheCodersLogo" class="d-flex justify-content-start">
         <article class="p-2" class="d-flex justify-content-center" class="d-flex align-items-center">
             <h1>The One</h1>
             <p>By Lord Of The Coders</p>
@@ -35,18 +35,19 @@
         </ul>
     </nav>
     <main>
-        <section class="main-scetion">
-          <article class="quote-container">
+          <section class="quote-container">
             <button id="Favorite-Button" aria-label="Add to favorites">❤️</button>
             <span class="score">0/10</span>
-            <blockquote>"QUOTE"</blockquote>
-            <p>Wie zei het? In welke film?</p>
+            <section id="quote-section">
+              <blockquote>"QUOTE"</blockquote>
+              <p>Wie zei het? In welke film?</p>
+            </section>  
             <span class="amount">v .../20</span>
             <button id="Blacklist-Button" aria-label="Add to blacklist">
               🚫
             </button>
-          </article>
-        </section>
+          </section>
+
   
         <section>
           <article id="karakter">
@@ -56,7 +57,7 @@
             <button id="karakter-button">text</button>
           </article>
   
-          <button id="Submit-button" class="next-button">Submit</button>
+          
   
           <article id="film">
             <h3>Film</h3>
@@ -65,6 +66,11 @@
             <button id="film-button">text</button>
           </article>
         </section>
+
+        <section id="submit-section">
+          <button id="Submit-button" class="next-button">Submit</button>
+        </section>
+        
     </main>
     
     <aside>
