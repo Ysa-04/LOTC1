@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="nofollow" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/10rounds.css">
     <script src="javascript/hamburger-menu.js" defer></script>
     <link rel="icon" type="image/x-icon" href="/assets/lord-of-the-coders-logo.png">
     <audio autoplay loop>
@@ -34,33 +35,38 @@
         </ul>
     </nav>
     <main>
-        <section>
-            <article>
-                <button id="Favorite-Button">❤️</button>
-                <span>7/10</span>
-                <h2>"QUOTE"</h2>
-                <p>Wie zei het? In welke film?</p>
-                <span>vinkje 6/20</span> 
-                <!-- Vinkje moet nog een icoon worden -->
-                <button id="Blacklist-Button">🚫</button>
-            </article>
+        <section class="main-scetion">
+          <article class="quote-container">
+            <button id="Favorite-Button" aria-label="Add to favorites">❤️</button>
+            <span class="score">0/10</span>
+            <blockquote>"QUOTE"</blockquote>
+            <p>Wie zei het? In welke film?</p>
+            <span class="amount">v .../20</span>
+            <button id="Blacklist-Button" aria-label="Add to blacklist">
+              🚫
+            </button>
+          </article>
         </section>
+  
         <section>
-            <article id="karakter">
-              <h3>Karakter</h3>
-              <input type="text" placeholder="Voer karakter in" />
-              <input type="text" placeholder="Voer karakter in" />
-              <input type="text" placeholder="Voer karakter in" />
-            </article>
-            <article id="film">
-                <h3>Film</h3>
-                <input type="text" placeholder="Voer film in" />
-                <input type="text" placeholder="Voer film in" />
-                <input type="text" placeholder="Voer film in" />
-            </article>
+          <article id="karakter">
+            <h3>Karakter</h3>
+            <button id="karakter-button">text</button>
+            <button id="karakter-button">text</button>
+            <button id="karakter-button">text</button>
+          </article>
+  
+          <button id="Submit-button" class="next-button">Submit</button>
+  
+          <article id="film">
+            <h3>Film</h3>
+            <button id="film-button">text</button>
+            <button id="film-button">text</button>
+            <button id="film-button">text</button>
+          </article>
         </section>
-        <button id="Submit-button">Volgende</button>
     </main>
+    
     <aside>
         <button>❌</button>
         <ul>

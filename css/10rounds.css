@@ -1,0 +1,199 @@
+/* Reset default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+figure,
+blockquote {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: url("fotos/AI\ generated\ lotr.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+main {
+  background-color: green;
+  margin: 6rem;
+  border: 20px solid white;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Ruimte tussen de quote-container en input-section */
+}
+
+#karakter,
+#film {
+  flex: 1; /* Beide nemen evenveel ruimte in */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparant wit */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+  background-color: pink;
+}
+
+header img {
+  max-width: 150px;
+  height: auto;
+}
+
+.quote-container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  margin: 50px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: row;
+}
+
+.quote-container blockquote {
+  font-size: 1.5em;
+  margin: 20px 0;
+  font-style: italic;
+  color: #555;
+}
+
+.quote-container p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #777;
+}
+
+.quote-container .score,
+.quote-container .amount {
+  display: block;
+  font-size: 1em;
+  color: #999;
+}
+
+.quote-container button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin: 0 10px;
+  color: black;
+}
+
+#karakter,
+#film {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#karakter h3,
+#film h3 {
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  color: #444;
+}
+
+#karakter button,
+#film button {
+  width: 100%;
+  padding: 10px;
+  /*margin-bottom: 10px;*/
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+#karakter button:hover,
+#film button:hover {
+  background-color: #555;
+}
+
+.next-button {
+  display: block;
+  width: 20%;
+  height: 30%;
+  padding: 15px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 60px;
+}
+
+.next-button:hover {
+  background-color: #45a049;
+}
+
+aside nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+aside nav ul li a {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #333;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.footer a {
+  margin: 0 10px;
+}
+
+.footer img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+/* Aanvullende stijlen voor lay-out */
+section {
+  display: flex;
+  justify-content: space-between;
+}
+
+#karakter,
+#film {
+  width: 48%; /* Zorgt voor een kleine ruimte tussen de artikelen */
+}
+
+#karakter button,
+#film button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+}
