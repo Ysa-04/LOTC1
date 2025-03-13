@@ -14,8 +14,8 @@ body {
 
 main {
     margin: 5rem;
-    border: 20px solid rgba(227, 167, 34, 0.5);
-    border-radius: 20px;
+    border: 5px solid rgba(227, 167, 34, 0.5);
+    border-radius: 15px;
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -24,8 +24,8 @@ main {
     flex-direction: row;
     gap: 20px; /* Ruimte tussen de quote-container en input-section */
     background-color: var(--primary-color);
-    color: white;
-    border-radius: 10px;
+    color: lightgrey;
+    border-radius: 15px;
     padding: 20px;
     margin: 50px;
     text-align: center;
@@ -40,20 +40,19 @@ main {
 .quote-container blockquote {
     font-size: 1.5em;
     font-style: italic;
-    color: #555;
 }
 
 .quote-container p {
     font-size: 1.2em;
     margin-bottom: 10px;
-    color: #777;
+
 }
 
 .quote-container .score,
 .quote-container .amount {
     display: block;
     font-size: 1em;
-    color: #999;
+    color: lightgrey;
 }
 
 .quote-container button {
@@ -62,28 +61,26 @@ main {
     font-size: 1.5em;
     cursor: pointer;
     margin: 0 10px;
-    color: black;
 }
 
 #karakter,
 #film {
-    background-color: #6f6340;
-    border: 4px solid #e3a722;
+    background-color: #5c5234cc;
+    color: lightgrey;
+    border: 4px solid rgba(227, 167, 34,0.5);
     border-radius: 10px;
     margin: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex: 1; /* Beide nemen evenveel ruimte in */
     /*background: rgba(255, 255, 255, 0.2); /* Semi-transparant wit */
     width: 48%; /* Zorgt voor een kleine ruimte tussen de artikelen */
     text-align: center;
-    padding-top:6px;
+    padding-top: 10px;
 }
 
 #karakter h3,
 #film h3 {
   margin-bottom: 15px;
   font-size: 1.3em;
-  color: #444;
 }
 
 #karakter button,
@@ -92,9 +89,9 @@ main {
     /*margin: 5px 0;*/
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border-top: 3px solid rgba(227, 167, 34, 0.5);
     border-radius: 5px;
-    background-color: #333;
+    background-color: #5c5234cc;
     color: #fff;
     cursor: pointer;
 }
@@ -116,7 +113,7 @@ main {
     width: 20%;
     height: 30%;
     padding: 15px;
-    background-color: #4caf50;
+    background-color: #5c5234cc;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -126,12 +123,10 @@ main {
 }
 
 .next-button:hover {
-    background-color: #45a049;
+    background-color: #555;
 }
 
 section {
     display: flex;
     justify-content: space-between;
 }
-
-
