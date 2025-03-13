@@ -8,7 +8,6 @@ body {
     font-family: Arial, sans-serif;
     background: url("/assets/10-rounds-wrong-answers-background.png") no-repeat center center fixed;
     background-size: cover;
-    color: #333;
     line-height: 1.6;
 }
 
@@ -71,7 +70,6 @@ main {
     border-radius: 10px;
     margin: 50px;
     flex: 1; /* Beide nemen evenveel ruimte in */
-    /*background: rgba(255, 255, 255, 0.2); /* Semi-transparant wit */
     width: 48%; /* Zorgt voor een kleine ruimte tussen de artikelen */
     text-align: center;
     padding-top: 10px;
@@ -98,7 +96,7 @@ main {
 
 #karakter button:hover,
 #film button:hover {
-    background-color: #555;
+    background-color: #413924cc;
 }
 
 #submit-section {
@@ -123,7 +121,7 @@ main {
 }
 
 .next-button:hover {
-    background-color: #555;
+    background-color: #413924cc;
 }
 
 section {
