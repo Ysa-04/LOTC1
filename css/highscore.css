@@ -26,9 +26,14 @@ main article{
 .scores{
     margin-left: -15%;
     margin-right: -10%;
+    text-shadow: #ffffff 2px 2px 2px;
 }
 main{
     min-height: 100vh;
+}
+#highscore-title{
+    mix-blend-mode: difference;
+    text-shadow: #e3a722 2px 2px 2px;
 }
 /* Media querries */
 @media (max-width: 1025px) {

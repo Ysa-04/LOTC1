@@ -6,40 +6,39 @@ body {
 }
 main{
     padding: 15px;
-    margin: 5vw;
- 
+    margin-bottom: 13vw;
+    margin-top: 2vw;
 }
-h2{
-    border: 2px;
+.title{
     display: flex;
     justify-content: space-around;
+    padding: 5px;
     border-radius: 10px;
-    background-color: #554827;
+    background-color:#554827;
     color: lightgrey;
-    padding: 15px;
+    margin-bottom: 1vw;
 }
-section{
+.kader{
     border: 5px solid rgba(227, 167, 34,0.5);
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     padding: 25px;
-}
 
-.listkader, h3,.answer{
-    color: lightgrey;
-    opacity: 1;
 }
-
+.list{
+    border: 5px solid rgba(227, 167, 34,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
 .listkader{
     padding-top: 10px;
-    padding-left: 10px;
+    padding-left: 15px;
     border-bottom: 2px solid rgba(227, 167, 34,0.5);
     width: 100%;
     background-color: #5c5234cc;
+    display: grid;
+    grid-template-columns:repeat(2,1fr); ;
+    padding-right: 15px;
+    color: lightgrey;
 }
-.kader{
-    border: 4px solid rgba(227, 167, 34,0.5);
-    border-radius: 15px; 
-    margin-top: 30px;
-   
-}
+
