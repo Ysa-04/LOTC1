@@ -69,6 +69,9 @@ nav img{
     width: 1.5vw;
     height: auto;
 }
+nav img:hover, #hamburger-menu:hover{
+    transform: scale(1.2);
+}
 
 /*Font*/
 @font-face {
