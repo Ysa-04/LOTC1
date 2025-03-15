@@ -65,6 +65,10 @@ nav a:hover{
 nav a{
     padding: 1%;
 }
+nav img{
+    width: 1.5vw;
+    height: auto;
+}
 
 /*Font*/
 @font-face {
