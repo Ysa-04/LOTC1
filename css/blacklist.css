@@ -43,10 +43,3 @@ main{
     color: lightgrey;
 }
 
-@media (max-width : 420px) {
-    .listkader{
-        display: grid;
-        grid-template-rows: repeat((3,1fr));
-        grid-template-columns: 1fr;
-    }
-}
