@@ -47,6 +47,13 @@ form input {
     color: white;
     box-sizing: border-box;
 }
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    margin-left: -54px;
+    margin-right: -104px;
+}
+
+
 
 form button {
     width: 100%;
