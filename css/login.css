@@ -83,7 +83,7 @@ footer article {
 }
 
 /* media-queries */
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
     #the-lord-text {
         font-size: 45px;
     }
