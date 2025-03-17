@@ -93,6 +93,10 @@ nav img:hover, #hamburger-menu:hover{
     header article{
         margin-right: 0%;
     }
+    nav img{
+        width: 3vw;
+        height: auto;
+    }
 }
 
 @media (max-width: 576px) {
@@ -114,5 +118,9 @@ nav img:hover, #hamburger-menu:hover{
     }
     header article{
         margin-right: 5%;
+    }
+    nav img{
+        width: 4vw;
+        height: auto;
     }
 }
