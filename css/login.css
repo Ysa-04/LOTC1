@@ -22,7 +22,7 @@ main {
     margin-bottom: 20px;
 }
 
-article {
+main article {
     color: white;
     background: rgba(0, 0, 0, 0.7);
     padding: 30px;
@@ -36,6 +36,7 @@ h2 {
     font-size: 24px;
     margin-bottom: 15px;
 }
+
 
 form input {
     width: 100%;
