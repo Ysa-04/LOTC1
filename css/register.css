@@ -22,7 +22,7 @@ main {
     margin-bottom: 20px;
 }
 
-article {
+main article {
     background: rgba(0, 0, 0, 0.8);
     padding: 30px;
     border-radius: 15px;
@@ -73,6 +73,7 @@ form button {
     cursor: pointer;
     box-sizing: border-box;
 }
+
 form button:hover {
     background: #e3a722;
     transform: scale(1.05);
@@ -81,12 +82,3 @@ form button:hover {
 footer article {
     box-shadow: none;
 }
-
-footer article {
-    display: flex;
-    flex-direction: row; 
-    align-items: center; 
-}
-
-
-
