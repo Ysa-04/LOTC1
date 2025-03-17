@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
     const usernameInput = document.querySelector("input[name='username']");
+    const emailInput = document.querySelector("input[name='email']");
     const passwordInput = document.querySelector("input[name='password']");
+    const confirmPasswordInput = document.querySelector("input[name='confirm-password']");
     
     form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -15,16 +17,38 @@ document.addEventListener("DOMContentLoaded", function () {
             removeError(usernameInput);
         }
         
+        if (emailInput.value.trim() === "") {
+            showError(emailInput, "E-mail is verplicht");
+            valid = false;
+        } else if (!validateEmail(emailInput.value)) {
+            showError(emailInput, "Voer een geldig e-mailadres in");
+            valid = false;
+        } else {
+            removeError(emailInput);
+        }
+        
         if (passwordInput.value.trim() === "") {
             showError(passwordInput, "Wachtwoord is verplicht");
+            valid = false;
+        } else if (passwordInput.value.length < 6) {
+            showError(passwordInput, "Wachtwoord moet minimaal 6 tekens lang zijn");
             valid = false;
         } else {
             removeError(passwordInput);
         }
         
+        if (confirmPasswordInput.value.trim() === "") {
+            showError(confirmPasswordInput, "Bevestig je wachtwoord");
+            valid = false;
+        } else if (confirmPasswordInput.value !== passwordInput.value) {
+            showError(confirmPasswordInput, "Wachtwoorden komen niet overeen");
+            valid = false;
+        } else {
+            removeError(confirmPasswordInput);
+        }
+        
         if (valid) {
-            // Succesvolle login 'forceren', later vervangen door back-end
-            alert("Succesvol ingelogd!");
+            alert("Account succesvol aangemaakt!");
             window.location.href = "homepage.html";
         }
     });
@@ -47,5 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (existingError) {
             existingError.remove();
         }
+    }
+    
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
     }
 });
