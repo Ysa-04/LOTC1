@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         if (valid) {
-            alert("Account succesvol aangemaakt!");
-            window.location.href = "homepage.html";
+            alert("Account succesvol aangemaakt! Je kan nu inloggen met je account!");
+            window.location.href = "login.html";
         }
     });
     
