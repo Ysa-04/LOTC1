@@ -22,7 +22,7 @@ main {
     margin-bottom: 20px;
 }
 
-article {
+main article {
     color: white;
     background: rgba(0, 0, 0, 0.7);
     padding: 30px;
@@ -37,6 +37,7 @@ h2 {
     margin-bottom: 15px;
 }
 
+
 form input {
     width: 100%;
     padding: 10px;
@@ -46,6 +47,13 @@ form input {
     color: white;
     box-sizing: border-box;
 }
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    margin-left: -54px;
+    margin-right: -104px;
+}
+
+
 
 form button {
     width: 100%;
@@ -80,4 +88,44 @@ form p a:hover {
 }
 footer article {
     box-shadow: none;
+}
+
+/* media-queries */
+@media (min-width: 768px) {
+    #the-lord-text {
+        font-size: 45px;
+    }
+
+    article {
+        width: 90%;
+        padding: 20px;
+    }
+
+    form input, form button {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 420px) {
+    body {
+        background-size: contain;
+    }
+
+    #the-lord-text {
+        font-size: 35px;
+    }
+
+    article {
+        width: 95%;
+        padding: 15px;
+    }
+
+    form input, form button {
+        padding: 6px;
+    }
+
+    form div {
+        flex-direction: column;
+        text-align: center;
+    }
 }
