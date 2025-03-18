@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="nofollow" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/10rounds.css">
     <script src="javascript/hamburger-menu.js" defer></script>
     <link rel="icon" type="image/x-icon" href="/assets/lord-of-the-coders-logo.png">
     <audio autoplay loop>
@@ -16,7 +17,7 @@
 </head>
 <body>
     <header class="d-flex justify-content-between align-items-center">
-        <img src="assets/lord-of-the-coders-logo.png" alt="LordOfTheCodersLogo" class="d-flex justify-content-start">
+        <img src="/assets/lord-of-the-coders-logo.png" alt="LordOfTheCodersLogo" class="d-flex justify-content-start">
         <article class="p-2" class="d-flex justify-content-center" class="d-flex align-items-center">
             <h1>The One</h1>
             <p>By Lord Of The Coders</p>
@@ -34,33 +35,44 @@
         </ul>
     </nav>
     <main>
+          <section class="quote-container">
+            <button id="Favorite-Button" aria-label="Add to favorites">
+              <img src="/assets/heart.png" alt="Button" width="35" height="35">
+            </button>
+            <span class="score">0/10</span>
+            <section id="quote-section">
+              <blockquote>"QUOTE"</blockquote>
+              <p>Wie zei het? In welke film?</p>
+            </section>  
+            <span class="amount">v .../20</span>
+            <button id="Blacklist-Button" aria-label="Add to blacklist">
+              <img src="/assets/forbidden.png" alt="Button" width="30" height="30">
+            </button>
+          </section>
+
+  
         <section>
-            <article>
-                <button id="Favorite-Button">❤️</button>
-                <span>7/10</span>
-                <h2>"QUOTE"</h2>
-                <p>Wie zei het? In welke film?</p>
-                <span>vinkje 6/20</span> 
-                <!-- Vinkje moet nog een icoon worden -->
-                <button id="Blacklist-Button">🚫</button>
-            </article>
+          <article id="karakter">
+            <h3>Karakter</h3>
+            <button id="karakter-button">text</button>
+            <button id="karakter-button">text</button>
+            <button id="karakter-button">text</button>
+          </article>
+  
+          <article id="film">
+            <h3>Film</h3>
+            <button id="film-button">text</button>
+            <button id="film-button">text</button>
+            <button id="film-button">text</button>
+          </article>
         </section>
-        <section>
-            <article id="karakter">
-              <h3>Karakter</h3>
-              <input type="text" placeholder="Voer karakter in" />
-              <input type="text" placeholder="Voer karakter in" />
-              <input type="text" placeholder="Voer karakter in" />
-            </article>
-            <article id="film">
-                <h3>Film</h3>
-                <input type="text" placeholder="Voer film in" />
-                <input type="text" placeholder="Voer film in" />
-                <input type="text" placeholder="Voer film in" />
-            </article>
+
+        <section id="submit-section">
+          <button id="Submit-button" class="next-button">Submit</button>
         </section>
-        <button id="Submit-button">Volgende</button>
+        
     </main>
+
     <nav id="nav-menu" class="d-none">
         <ul class="align-items-center text-right">
             <li class="p-2" class="d-flex justify-content-center text-right"><a href="/homepage.html"><img src="assets/house-black-silhouette-without-door.png" alt=""></a></li>
@@ -68,6 +80,7 @@
             <li class="p-2" class="d-flex justify-content-center text-right"><a href="/blacklist.html"><img src="assets/forbidden.png" alt=""></a></li>
             <li class="p-2" class="d-flex justify-content-center text-right"><a href="/highscore.html"><img src="assets/trophy.png" alt=""></a></li>
             <li class="p-2" class="d-flex justify-content-center text-right"><a href="/index.html"><img src="assets/logout.png" alt=""></a></li>
+
         </ul>
     </nav>
     <footer class="d-flex justify-content-between align-items-center">
