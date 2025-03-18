@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="nofollow" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/SuddenDeath.css">
     <script src="javascript/hamburger-menu.js" defer></script>
     <link rel="icon" type="image/x-icon" href="/assets/lord-of-the-coders-logo.png">
     <audio autoplay loop>
@@ -34,35 +35,48 @@
       </ul>
   </nav>
     <main>
-        <section>
-            <article>
-              <button id="Favorite-Button">❤️</button>
-              <span>vinkje 6</span> 
-              <!-- Vinkje moet nog een icoon worden -->
-              <h2>"QUOTE"</h2>
-              <p>Wie zei het? In welke film?</p>
-              <button id="Blacklist-Button">🚫</button>
-            </article>
-          </section>
+      <section class="quote-container">
+        <button id="Favorite-Button" aria-label="Add to favorites">❤️</button>
+        <section id="quote-section">
+          <span class="amount">3</span>
+          <blockquote>"QUOTE"</blockquote>
+          <p>Wie zei het? In welke film?</p>
+        </section>  
+        <button id="Blacklist-Button" aria-label="Add to blacklist">
+          🚫
+        </button>
+      </section>
+      <section>
+        <article id="karakter">
+          <h3>Karakter</h3>
+          <button id="karakter-button">text</button>
+          <button id="karakter-button">text</button>
+          <button id="karakter-button">text</button>
+        </article>
 
-          <section>
-            <article id="karakter">
-              <h3>Karakter</h3>
-              <input type="text" placeholder="Voer karakter in" />
-              <input type="text" placeholder="Voer karakter in" />
-              <input type="text" placeholder="Voer karakter in" />
-            </article>
+        <article id="film">
+          <h3>Film</h3>
+          <button id="film-button">text</button>
+          <button id="film-button">text</button>
+          <button id="film-button">text</button>
+        </article>
+      </section>
 
-            <article id="film">
-              <h3>Film</h3>
-              <input type="text" placeholder="Voer film in" />
-              <input type="text" placeholder="Voer film in" />
-              <input type="text" placeholder="Voer film in" />
-            </article>
-          </section>
+    <section id="submit-section">
+      <button id="Submit-button" class="next-button">Submit</button>
+    </section>
+  </main>
 
-          <button id="Submit-button">Volgende</button>
-    </main>
+  <aside>
+    <button>❌</button>
+     <ul>
+        <li>🏠</li>
+        <li>❤️</li>
+        <li>🚫</li>
+        <li>🏆</li>
+      </ul>
+    <button>↪</button>
+</aside>
     <footer class="d-flex justify-content-between align-items-center">
       <div class="d-flex justify-content-start"></div>
       <p class="p-2" class="d-flex justify-content-center" class="d-flex align-items-center"><span style="font-family: 'Arial', sans-serif;">&copy;</span> Lord Of The Coders</p>
