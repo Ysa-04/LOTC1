@@ -125,3 +125,76 @@ section {
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 1024px) {
+  main {
+    margin: 1rem;
+  }
+
+  .quote-container {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .quote-container blockquote {
+    font-size: 1.3em;
+  }
+
+  .quote-container p {
+    font-size: 1.1em;
+  }
+
+  #karakter,
+  #film {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .next-button {
+    width: 30%;
+  }
+}
+
+/* Media Queries voor Smartphones (max-width: 767px) */
+@media (max-width: 767px) {
+  main {
+    margin: 0.5rem;
+  }
+
+  .quote-container {
+    margin: 5px;
+    padding: 10px;
+  }
+
+  .quote-container blockquote {
+    font-size: 1.1em;
+  }
+
+  .quote-container p {
+    font-size: 1em;
+  }
+
+  #karakter button,
+  #film button {
+    font-size: 1.1rem;
+    padding: 8px;
+  }
+
+  .next-button {
+    width: 50%;
+    font-size: 1.1em;
+    padding: 10px;
+  }
+
+  section {
+    flex-direction: column;
+  }
+
+  #karakter,
+  #film {
+    width: 98%;
+    margin: 5px;
+  }
+}
