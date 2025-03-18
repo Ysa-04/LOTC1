@@ -127,6 +127,12 @@ section {
   justify-content: space-between;
 }
 
+#karakter button.active,
+#film button.active {
+  background-color: #413924cc;
+  border: 2px solid rgba(227, 167, 34, 0.5);
+}
+
 @media (max-width: 1024px) {
   main {
     margin: 1rem;
