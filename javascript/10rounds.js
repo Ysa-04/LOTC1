@@ -1,5 +1,7 @@
 const karakterButtons = document.querySelectorAll("#karakter button");
 const filmButtons = document.querySelectorAll("#film button");
+const favoriteButtons = document.querySelectorAll("#Favorite-Button");
+const blacklistButtons = document.querySelectorAll("#Blacklist-Button");
 
 function changeButtonColor(button) {
   button.classList.toggle("active");
@@ -20,6 +22,18 @@ karakterButtons.forEach((button) => {
 });
 
 filmButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeButtonColor(button);
+  });
+});
+
+favoriteButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeButtonColor(button);
+  });
+});
+
+blacklistButtonsButtons.forEach((button) => {
   button.addEventListener("click", () => {
     changeButtonColor(button);
   });

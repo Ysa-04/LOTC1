@@ -131,6 +131,10 @@ section {
   border: 2px solid rgba(227, 167, 34, 0.5);
 }
 
+#Favorite-Button img.active {
+  background-image: url("\assets\heart.png");
+}
+
 @media (max-width: 1024px) {
   main {
     margin: 1rem;
