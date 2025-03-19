@@ -131,7 +131,7 @@ section {
   border: 2px solid rgba(227, 167, 34, 0.5);
 }
 
-#Favorite-Button img.active {
+#Favorite-Button.active {
   content: url("\assets\heart.png");
 }
 

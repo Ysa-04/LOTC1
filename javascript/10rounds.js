@@ -14,6 +14,12 @@ function changeButtonColor(button) {
     }
   });
 }
+function changeImage(button) {
+  document.getElementById("favBut").src = "/assets/white_heart.png";
+}
+function changeImage10(button) {
+  document.getElementById("blackBut").src = "/assets/white_forbidden.png";
+}
 
 karakterButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -29,12 +35,12 @@ filmButtons.forEach((button) => {
 
 favoriteButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    changeButtonColor(button);
+    changeImage(button);
   });
 });
 
 blacklistButtonsButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    changeButtonColor(button);
+    changeImage10(button);
   });
 });
