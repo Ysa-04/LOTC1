@@ -39,7 +39,7 @@ favoriteButtons.forEach((button) => {
   });
 });
 
-blacklistButtonsButtons.forEach((button) => {
+blacklistButtons.forEach((button) => {
   button.addEventListener("click", () => {
     changeImage10(button);
   });
