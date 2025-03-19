@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/10rounds.css" />
     <script src="javascript/hamburger-menu.js" defer></script>
+    <script src="javascript\10rounds.js"></script>
     <link
       rel="icon"
       type="image/x-icon"
@@ -49,50 +50,51 @@
         id="hamburger-menu"
       />
     </header>
-    <nav id="nav-menu" class="d-none">
-      <ul class="align-items-center text-right">
-        <li class="p-2" class="d-flex justify-content-center text-right">
-          <a href="/homepage.html">🏠</a>
-        </li>
-        <li class="p-2" class="d-flex justify-content-center text-right">
-          <a href="/favorite.html">❤️</a>
-        </li>
-        <li class="p-2" class="d-flex justify-content-center text-right">
-          <a href="/blacklist.html">🚫</a>
-        </li>
-        <li class="p-2" class="d-flex justify-content-center text-right">
-          <a href="/highscore.html">🏆</a>
-        </li>
-        <li class="p-2" class="d-flex justify-content-center text-right">
-          <a href="/index.html">↪</a>
-        </li>
-      </ul>
-    </nav>
     <main>
       <section class="quote-container">
-        <button id="Favorite-Button" aria-label="Add to favorites">❤️</button>
-        <span class="score">0/10</span>
+        <button id="Favorite-Button" aria-label="Add to favorites">
+          <img src="/assets/heart.png" alt="Button" width="35" height="35" />
+        </button>
+        <span class="score">8/10</span>
         <section id="quote-section">
-          <blockquote>"QUOTE"</blockquote>
+          <blockquote>
+            "Even the smallest person can change the course of the future."
+          </blockquote>
           <p>Wie zei het? In welke film?</p>
         </section>
-        <span class="amount">v .../20</span>
-        <button id="Blacklist-Button" aria-label="Add to blacklist">🚫</button>
+        <span class="amount">14/20</span>
+        <button id="Blacklist-Button" aria-label="Add to blacklist">
+          <img
+            src="/assets/forbidden.png"
+            alt="Button"
+            width="30"
+            height="30"
+          />
+        </button>
       </section>
 
       <section>
         <article id="karakter">
-          <h3>Karakter</h3>
-          <button id="karakter-button">text</button>
-          <button id="karakter-button">text</button>
-          <button id="karakter-button">text</button>
+          <h3>
+            <img src="\assets\people.png" alt="people" width="35" height="35" />
+          </h3>
+          <button id="karakter-button">Gandalf</button>
+          <button id="karakter-button">Galadriel</button>
+          <button id="karakter-button">Bilbo</button>
         </article>
 
         <article id="film">
-          <h3>Film</h3>
-          <button id="film-button">text</button>
-          <button id="film-button">text</button>
-          <button id="film-button">text</button>
+          <h3>
+            <img
+              src="\assets\clapperboard.png"
+              alt="clapperboard"
+              width="35"
+              height="35"
+            />
+          </h3>
+          <button id="film-button">The Fellowship of the Ring</button>
+          <button id="film-button">The Two Towers</button>
+          <button id="film-button">The Return of the King</button>
         </article>
       </section>
 
@@ -101,16 +103,29 @@
       </section>
     </main>
 
-    <aside>
-      <button>❌</button>
-      <ul>
-        <li>🏠</li>
-        <li>❤️</li>
-        <li>🚫</li>
-        <li>🏆</li>
+    <nav id="nav-menu" class="d-none">
+      <ul class="align-items-center text-right">
+        <li class="p-2" class="d-flex justify-content-center text-right">
+          <a href="/homepage.html"
+            ><img src="assets/house-black-silhouette-without-door.png" alt=""
+          /></a>
+        </li>
+        <li class="p-2" class="d-flex justify-content-center text-right">
+          <a href="/favorite.html"><img src="assets/heart.png" alt="" /></a>
+        </li>
+        <li class="p-2" class="d-flex justify-content-center text-right">
+          <a href="/blacklist.html"
+            ><img src="assets/forbidden.png" alt=""
+          /></a>
+        </li>
+        <li class="p-2" class="d-flex justify-content-center text-right">
+          <a href="/highscore.html"><img src="assets/trophy.png" alt="" /></a>
+        </li>
+        <li class="p-2" class="d-flex justify-content-center text-right">
+          <a href="/index.html"><img src="assets/logout.png" alt="" /></a>
+        </li>
       </ul>
-      <button>↪</button>
-    </aside>
+    </nav>
     <footer class="d-flex justify-content-between align-items-center">
       <div class="d-flex justify-content-start"></div>
       <p
