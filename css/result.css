@@ -1,10 +1,10 @@
 body {
   font-family: Arial, sans-serif;
-  background: url("fotos/AI\ generated\ lotr.png") no-repeat center center fixed;
+  background: url("/assets/10-rounds-wrong-answers-background.png") no-repeat
+    center center fixed;
   background-size: cover;
   color: #333;
   line-height: 1.6;
-  padding: 20px;
 }
 
 main {
@@ -14,6 +14,7 @@ main {
   display: grid;
   place-items: center;
   padding: 10rem;
+  height: 42vw;
 }
 
 p {
@@ -27,9 +28,10 @@ p {
   font-size: 2rem;
   padding: 1rem;
   margin-bottom: 2rem;
+  border-radius: 15px;
 }
 
 #Mistakes-Button {
-  text-decoration: underline;
   font-size: 2rem;
+  border-radius: 15px;
 }
