@@ -8,6 +8,7 @@ main{
     padding: 15px;
     margin-bottom: 13vw;
     margin-top: 2vw;
+    height: 100vh;
 }
 .title{
     display: flex;

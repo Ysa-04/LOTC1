@@ -107,10 +107,6 @@ footer article {
 }
 
 @media (max-width: 420px) {
-    body {
-        background-size: contain;
-    }
-
     #the-lord-text {
         font-size: 35px;
     }
