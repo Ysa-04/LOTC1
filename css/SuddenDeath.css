@@ -132,7 +132,7 @@ section {
 }
 
 #Favorite-Button img.active {
-  background-image: url("\assets\heart.png");
+  content: url("\assets\heart.png");
 }
 
 @media (max-width: 1024px) {
