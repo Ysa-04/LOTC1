@@ -17,6 +17,7 @@ main{
     background-color:#554827;
     color: lightgrey;
     margin-bottom: 1vw;
+    border: 3px solid rgba(227, 167, 34,0.5);   
 }
 .kader{
     border: 5px solid rgba(227, 167, 34,0.5);
@@ -42,3 +43,10 @@ main{
     color: lightgrey;
 }
 
+@media (max-width : 420px) {
+    .listkader{
+        display: grid;
+        grid-template-rows: repeat((3,1fr));
+        grid-template-columns: 1fr;
+    }
+}
