@@ -11,6 +11,8 @@ import mistakesRouter from "./routers/mistakes";
 import resultRouter from "./routers/result";
 import suddendeathRouter from "./routers/suddendeath";
 import indexRouter from "./routers";
+import { MongoClient } from "mongodb";
+
 
 const app = express();
 
@@ -36,3 +38,5 @@ app.listen(app.get("port"), () =>
 );
 
 //database (mongodb)
+const CONNECTION_STRING: string = "mongodb+srv://ysaura_va:d2pr0v6BMxfqh6cx@school.qkqtytv.mongodb.net/?retryWrites=true&w=majority&appName=School";
+const client: MongoClient = new MongoClient(CONNECTION_STRING);
