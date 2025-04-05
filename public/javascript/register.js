@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         if (valid) {
             alert("Account succesvol aangemaakt! Je kan nu inloggen met je account!");
-            window.location.href = "login.html";
+            window.location.href = "login.ejs";
         }
     });
     
