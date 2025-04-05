@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+ document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
     const usernameInput = document.querySelector("input[name='username']");
     const passwordInput = document.querySelector("input[name='password']");
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (valid) {
             // Succesvolle login 'forceren', later vervangen door back-end
             alert("Succesvol ingelogd!");
-            window.location.href = "homepage.html";
+            window.location.href = "homepage";
         }
     });
     
