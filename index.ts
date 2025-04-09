@@ -37,6 +37,7 @@ app.listen(app.get("port"), () =>
 );
 
 //database (mongodb)
+
 import { Collection, MongoClient } from "mongodb";
 import { UserAccount } from "./types";
 
@@ -54,3 +55,4 @@ async function main(){
     await client.close();
   }
 }main();
+
