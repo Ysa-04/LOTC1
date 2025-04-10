@@ -11,6 +11,7 @@ import mistakesRouter from "./routers/mistakes";
 import resultRouter from "./routers/result";
 import suddendeathRouter from "./routers/suddendeath";
 import indexRouter from "./routers";
+import error404Router from "./routers/404";
 
 
 const app = express();
@@ -31,6 +32,7 @@ app.use("/mistakes", mistakesRouter());
 app.use("/result", resultRouter());
 app.use("/suddendeath", suddendeathRouter());
 app.use("/", indexRouter());
+app.use("/404", error404Router());
 
 app.listen(app.get("port"), () =>
   console.log("[server] http://localhost:" + app.get("port"))
