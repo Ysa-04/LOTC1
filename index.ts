@@ -12,6 +12,7 @@ import resultRouter from "./routers/result";
 import suddendeathRouter from "./routers/suddendeath";
 import indexRouter from "./routers";
 import error404Router from "./routers/404";
+import landingpage404Router from "./routers/404landingpage";
 
 
 const app = express();
@@ -43,7 +44,6 @@ app.listen(app.get("port"), () =>
 
 import { Collection, MongoClient } from "mongodb";
 import { UserAccount } from "./types";
-import landingpage404Router from "./routers/404landingpage";
 
 const CONNECTION_STRING: string = "mongodb+srv://ysaura_va:d2pr0v6BMxfqh6cx@school.qkqtytv.mongodb.net/?retryWrites=true&w=majority&appName=School";
 const client: MongoClient = new MongoClient(CONNECTION_STRING);
