@@ -33,6 +33,7 @@ app.use("/result", resultRouter());
 app.use("/suddendeath", suddendeathRouter());
 app.use("/", indexRouter());
 app.use("/404", error404Router());
+app.use("/404landingpage", landingpage404Router());
 
 app.listen(app.get("port"), () =>
   console.log("[server] http://localhost:" + app.get("port"))
@@ -42,6 +43,7 @@ app.listen(app.get("port"), () =>
 
 import { Collection, MongoClient } from "mongodb";
 import { UserAccount } from "./types";
+import landingpage404Router from "./routers/404landingpage";
 
 const CONNECTION_STRING: string = "mongodb+srv://ysaura_va:d2pr0v6BMxfqh6cx@school.qkqtytv.mongodb.net/?retryWrites=true&w=majority&appName=School";
 const client: MongoClient = new MongoClient(CONNECTION_STRING);
