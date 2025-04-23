@@ -25,7 +25,7 @@
         if (valid) {
             // Succesvolle login 'forceren', later vervangen door back-end
             alert("Succesvol ingelogd!");
-            window.location.href = "home";
+            window.location.href = "/homepage";
         }
     });
     
