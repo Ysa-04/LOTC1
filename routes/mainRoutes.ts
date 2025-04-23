@@ -17,7 +17,7 @@ router.get("/404", (req, res) => {
 router.get("/blacklist", (req, res) => {
     res.render("blacklist");
 });
-router.get("/favourite", (req, res) => {
+router.get("/favorite", (req, res) => {
     res.render("favorite");
 });
 router.get("/highscore", (req, res) => {
