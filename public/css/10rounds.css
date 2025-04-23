@@ -78,6 +78,10 @@ main {
 #film h3 {
   margin-bottom: 15px;
   font-size: 1.3em;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 8rem 0.5rem 8rem;
 }
 
 #karakter button,

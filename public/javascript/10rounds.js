@@ -45,5 +45,3 @@ blacklistButtons.forEach((button) => {
     changeImage10(button);
   });
 });
-
-// API
