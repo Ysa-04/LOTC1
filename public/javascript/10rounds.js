@@ -1,3 +1,4 @@
+// Buttons
 const karakterButtons = document.querySelectorAll("#karakter button");
 const filmButtons = document.querySelectorAll("#film button");
 const favoriteButtons = document.querySelectorAll("#Favorite-Button");
@@ -44,3 +45,5 @@ blacklistButtons.forEach((button) => {
     changeImage10(button);
   });
 });
+
+// API
