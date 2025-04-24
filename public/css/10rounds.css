@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #6f6340; /* donker bruin */
-  --secondary-color: #c3b07d; /* licht bruin */
-  --accent-color: #e3a722; /* goud */
+  --primary-color: #6f6340; 
+  --secondary-color: #c3b07d; 
+  --accent-color: #e3a722; 
 }
 
 body {
@@ -21,7 +21,7 @@ main {
 .quote-container {
   display: flex;
   flex-direction: row;
-  gap: 20px; /* Ruimte tussen de quote-container en input-section */
+  gap: 20px; 
   background-color: var(--primary-color);
   color: lightgrey;
   border-radius: 15px;
@@ -68,8 +68,8 @@ main {
   border: 4px solid rgba(149, 109, 24, 0.777);
   border-radius: 10px;
   margin: 50px;
-  flex: 1; /* Beide nemen evenveel ruimte in */
-  width: 48%; /* Zorgt voor een kleine ruimte tussen de artikelen */
+  flex: 1;
+  width: 48%; 
   text-align: center;
   padding-top: 15px;
 }
