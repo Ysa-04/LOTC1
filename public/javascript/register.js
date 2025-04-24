@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         if (valid) {
-            alert("Account succesvol aangemaakt! Je kan nu inloggen met je account!");
+            alert("Account succesvol aangemaakt!");
             window.location.href = "login.ejs";
         }
     });
