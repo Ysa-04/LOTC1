@@ -7,6 +7,7 @@ router.get("/", (req, res) => {
 });
 router.get("/10-rounds", (req, res) => {
     res.render("10-rounds");
+
 });
 router.get("/404landingpage", (req, res) => {
     res.render("404landingpage");
