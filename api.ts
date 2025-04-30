@@ -30,7 +30,7 @@ let currentRound = 0;
 
 function getCharacterName(id: ObjectId): string {
     const character = characters.find(c => c._id?.toString() === id.toString());
-    return character ? CharacterData.name : "Onbekend";
+    return character ? character.name : "Onbekend"; 
 }
 
 function getMovieName(id: ObjectId): string {
@@ -40,15 +40,15 @@ function getMovieName(id: ObjectId): string {
 
 async function fetchCharacters(): Promise<Character[]> {
     try {
-        const res = await fetch(${Api_Link}/character, {
-        headers: {Authorization: Api_Token}
-    });
-    const data = await res.json();
+        const res = await fetch(`${Api_Link}/character`, { 
+            headers: { Authorization: Api_Token }
+        });
+        const data = await res.json();
 
-    return data.docs.map((c: any) => ({
-        _id: new ObjectId(c._id),
-        name: c.name
-    }));
+        return data.docs.map((c: any) => ({
+            _id: new ObjectId(c._id),
+            name: c.name
+        }));
     } catch (e) {
         console.error(e);
         return [];
@@ -57,15 +57,15 @@ async function fetchCharacters(): Promise<Character[]> {
 
 async function fetchMovies(): Promise<Movie[]> {
     try {
-        const res = await fetch(${Api_Link}/movie, {
-        headers: {Authorization: Api_Token}
-    });
-    const data = await res.json();
+        const res = await fetch(`${Api_Link}/movie`, { // Fixed here
+            headers: { Authorization: Api_Token }
+        });
+        const data = await res.json();
 
-    return data.docs.map((m: any) => ({
-        _id: new ObjectId(m._id),
-        name: m.name
-    }));
+        return data.docs.map((m: any) => ({
+            _id: new ObjectId(m._id),
+            name: m.name
+        }));
     } catch (e) {
         console.error(e);
         return [];
