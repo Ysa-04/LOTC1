@@ -57,7 +57,7 @@ async function fetchCharacters(): Promise<Character[]> {
 
 async function fetchMovies(): Promise<Movie[]> {
     try {
-        const res = await fetch(`${Api_Link}/movie`, { // Fixed here
+        const res = await fetch(`${Api_Link}/movie`, { 
             headers: { Authorization: Api_Token }
         });
         const data = await res.json();
