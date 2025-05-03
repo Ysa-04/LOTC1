@@ -13,5 +13,10 @@ export interface UserAccount {
 export interface Favorites {
     quote: string,
     character: string, 
-    movie: string
+}
+
+export interface Blacklist {
+    quote: string,
+    character: string, 
+    reason: string
 }
