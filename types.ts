@@ -5,7 +5,18 @@ export interface UserAccount {
     userName:string,
     email: string,
     password:string,
-    favourites: string,
-    blacklist: string,
+    favourites: Favorites[],
+    blacklist: Blacklist[],
     highscore: number
+}
+
+export interface Favorites {
+    quote: string,
+    character: string, 
+}
+
+export interface Blacklist {
+    quote: string,
+    character: string, 
+    reason: string
 }
