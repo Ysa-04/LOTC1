@@ -6,7 +6,7 @@ export interface UserAccount {
     email: string,
     password:string,
     favourites: Favorites[],
-    blacklist: string,
+    blacklist: Blacklist[],
     highscore: number
 }
 
