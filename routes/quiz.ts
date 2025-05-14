@@ -1,5 +1,4 @@
 import express from 'express';
-import fetch from 'node-fetch';
 import { addFavorite } from '../favorite-service';
 import { addToBlacklist, getBlacklistsByUserId } from '../blacklist-service';
 import { addHighscore } from '../highscore-service';

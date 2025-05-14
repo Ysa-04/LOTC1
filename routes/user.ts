@@ -12,7 +12,7 @@ function ensureLoggedIn(req, res, next) {
 
 router.use(ensureLoggedIn);
 
-router.get('/favorite', async (req, res) => {
+router.get('/favorite', async (req, res) => { 
   const quotes = await getFavoritesByUserId(req.session.user.id);
   res.render('favorite', { quotes });
 });
