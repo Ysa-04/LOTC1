@@ -1,7 +1,7 @@
 import express, {Express} from 'express';
 import { addFavorite } from '../favorite-service';
 import { addToBlacklist, getBlacklistsByUserId } from '../blacklist-service';
-import { addHighscore } from '../highscore-service';
+import { addHighscore } from '../highscores-service';
 
 const router = express.Router();
 const API_URL = 'https://the-one-api.dev/v2/quote';
