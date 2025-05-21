@@ -40,8 +40,8 @@ function getMovieName(id: ObjectId): string {
 
 async function fetchCharacters(): Promise<Character[]> {
     try {
-        const res = await fetch(`${Api_Link}/character`, { 
-            headers: { Authorization: Api_Token }
+        const res = await fetch(`${API_URL}/character`, { 
+            headers: { Authorization: API_KEY }
         });
         const data = await res.json();
 
@@ -57,8 +57,8 @@ async function fetchCharacters(): Promise<Character[]> {
 
 async function fetchMovies(): Promise<Movie[]> {
     try {
-        const res = await fetch(`${Api_Link}/movie`, { 
-            headers: { Authorization: Api_Token }
+        const res = await fetch(`${API_URL}/movie`, { 
+            headers: { Authorization: API_KEY }
         });
         const data = await res.json();
 
