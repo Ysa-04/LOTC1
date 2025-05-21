@@ -1,4 +1,4 @@
-import express from 'express';
+import express, {Express} from 'express';
 import { addFavorite } from '../favorite-service';
 import { addToBlacklist, getBlacklistsByUserId } from '../blacklist-service';
 import { addHighscore } from '../highscore-service';
