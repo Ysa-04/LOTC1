@@ -17,8 +17,8 @@ export interface Movie {
     name: string;
 }
 
-const Api_Link = 'https://the-one-api.dev/v2';
-const Api_Token = 'BKTeUwx4IMAM8KVDo7b0';
+const API_URL = 'https://the-one-api.dev/v2';
+const API_KEY = 'BKTeUwx4IMAM8KVDo7b0';
 
 let quotes: Quote[] = [];
 let characters: Character[] = [];

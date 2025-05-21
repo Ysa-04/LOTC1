@@ -7,21 +7,21 @@ const router = express.Router();
 const API_URL = 'https://the-one-api.dev/v2/quote';
 const API_KEY = process.env.LOTR_API_KEY;
 
-function ensureLoggedIn(req, res, next) {
+function ensureLoggedIn(req:any, res:any, next:any) {
   if (!req.session.user) return res.redirect('/login');
   next();
 }
 
 router.use(ensureLoggedIn);
 
-// Example route to start quiz
+
 router.get('/10-rounds', async (req, res) => {
   res.render('10-rounds');
 });
 
 router.get('/suddendeath', async (req, res) => {
   res.render('suddendeath');
-});
+}); 
 
 // Fetch random quote (filtered against blacklist)
 router.get('/quote', async (req, res) => {
@@ -32,7 +32,7 @@ router.get('/quote', async (req, res) => {
   const blacklist = await getBlacklistsByUserId(req.session.user.id);
   const blacklistQuotes = blacklist.map(q => q.quote);
 
-  const quote = data.docs.find(q => !blacklistQuotes.includes(q.dialog));
+  const quote = data.docs.find((q: { dialog: any; }) => !blacklistQuotes.includes(q.dialog));
   res.json(quote);
 });
 

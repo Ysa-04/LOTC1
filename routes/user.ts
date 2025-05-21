@@ -5,7 +5,7 @@ import { getBlacklistsByUserId, addToBlacklist, removeFromBlacklist, updateBlack
 
 const router = express.Router();
 
-function ensureLoggedIn(req, res, next) {
+function ensureLoggedIn(req:any, res:any, next:any) {
   if (!req.session.user) return res.redirect('/login');
   next();
 }
