@@ -1,4 +1,3 @@
-// user.service.ts
 import { getDB } from './database';
 import { ObjectId } from 'mongodb';
 
