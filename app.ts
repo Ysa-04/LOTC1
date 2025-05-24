@@ -7,6 +7,7 @@ import path from 'path';
 import authRoutes from './routes/auth';
 import quizRoutes from './routes/quiz';
 import userRoutes from './routes/user';
+import { getHighscoresByMode, getUserHighscore } from './highscores-service';
 
 dotenv.config();
 
@@ -64,3 +65,6 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+
+

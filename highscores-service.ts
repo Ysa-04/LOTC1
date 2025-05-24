@@ -18,3 +18,6 @@ export async function getUserHighscore(userId: string, mode: '10-rounds' | 'sudd
     .limit(1)
     .toArray();
 }
+
+
+
