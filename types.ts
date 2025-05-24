@@ -5,8 +5,8 @@ export interface UserAccount {
     userName:string,
     email: string,
     password:string,
-    favourites: Favorites[],
-    blacklist: Blacklist[],
+    favorites: Favorites,
+    blacklist: Blacklist,
     highscore: number
 }
 
@@ -19,4 +19,22 @@ export interface Blacklist {
     quote: string,
     character: string, 
     reason: string
+}
+
+export interface Characters {
+    name: string,
+    wikiUrl: string,
+    _id?: ObjectId
+} 
+
+export interface Movies {
+    name: string,
+    _id?: ObjectId
+}
+
+export interface Quotes {
+    dialog: string,
+    movie: Movies,
+    character: Characters,
+    _id?: ObjectId
 }
