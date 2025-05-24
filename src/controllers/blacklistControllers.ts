@@ -1,4 +1,4 @@
-import { db } from '../models/db';
+import { db } from '../models/database';
 import { Request, Response } from 'express';
 
 export async function addBlacklist(req: Request, res: Response) {

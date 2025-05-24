@@ -1,4 +1,4 @@
-import { db } from '../models/db';
+import { db } from '../models/database';
 import { Request, Response } from 'express';
 
 let currentScore: number = 0;
