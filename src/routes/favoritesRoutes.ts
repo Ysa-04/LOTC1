@@ -1,5 +1,5 @@
 import express from 'express';
-import { verifyToken } from '../middleware/auth';
+import { verifyToken } from '../middleware/login';
 import { addFavorite, getFavorites, removeFavorite } from '../controllers/favoritesControllers';
 
 const router = express.Router();
