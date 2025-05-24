@@ -1,40 +1,56 @@
 import { ObjectId } from "mongodb";
 
+// Gebruiker-account type
 export interface UserAccount {
-    _id?: ObjectId,
-    userName:string,
+    _id?: ObjectId,       
+    userId?: string,        
+    userName: string,
     email: string,
-    password:string,
-    favorites: Favorites,
+    password: string,
+    favorites: Favorite,
     blacklist: Blacklist,
     highscore: number
 }
 
-export interface Favorites {
+// Favoriete quote
+export interface Favorite {
     quote: string,
-    character: string, 
+    character: string
 }
 
+// Geblackliste quote
 export interface Blacklist {
     quote: string,
-    character: string, 
+    character: string,
     reason: string
 }
 
-export interface Characters {
+// Karakter info
+export interface Character {
     name: string,
     wikiUrl: string,
     _id?: ObjectId
-} 
+}
 
-export interface Movies {
+// Film info
+export interface Movie {
     name: string,
     _id?: ObjectId
 }
 
-export interface Quotes {
+// Quote info
+export interface Quote {
     dialog: string,
-    movie: Movies,
-    character: Characters,
+    movie: Movie,
+    character: Character,
     _id?: ObjectId
+}
+
+// TypeScript uitbreiding zodat we req.userId mogen gebruiken in Express
+declare global {
+  namespace Express {
+    interface Request {
+      userId?: string;
+    }
+  }
 }
