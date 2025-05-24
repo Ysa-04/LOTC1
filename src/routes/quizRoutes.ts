@@ -1,6 +1,6 @@
 import express from 'express';
 import { verifyToken } from '../middleware/auth';
-import { startQuiz } from '../controllers/quiz';
+import { startQuiz } from '../controllers/quizControllers';
 
 const router = express.Router();
 

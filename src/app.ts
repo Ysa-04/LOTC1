@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
 import authRoutes from './src/routes/auth';
-import quizRoutes from './src/routes/quiz';
+import quizRoutes from './routes/quizRoutes';
 import favoriteRoutes from './routes/favoritesRoutes';
 import blacklistRoutes from './routes/blacklistRoutes';
 import { connectToDb } from './models/db';
