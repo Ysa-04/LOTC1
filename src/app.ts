@@ -3,10 +3,10 @@ import path from 'path';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
-import authRoutes from './routes/auth';
-import quizRoutes from './routes/quiz';
-import favoriteRoutes from './routes/favorites';
-import blacklistRoutes from './routes/blacklist';
+import authRoutes from './src/routes/auth';
+import quizRoutes from './src/routes/quiz';
+import favoriteRoutes from './src/routes/favorites';
+import blacklistRoutes from './src/routes/blacklist';
 import { connectToDb } from './models/db';
 
 dotenv.config();
