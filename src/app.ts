@@ -5,8 +5,8 @@ import cookieParser from 'cookie-parser';
 
 import authRoutes from './src/routes/auth';
 import quizRoutes from './src/routes/quiz';
-import favoriteRoutes from './src/routes/favorites';
-import blacklistRoutes from './src/routes/blacklist';
+import favoriteRoutes from './routes/favoritesRoutes';
+import blacklistRoutes from './routes/blacklistRoutes';
 import { connectToDb } from './models/db';
 
 dotenv.config();
