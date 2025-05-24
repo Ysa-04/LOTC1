@@ -1,44 +1,38 @@
 import express from 'express';
-import session from 'express-session';
-import { MongoClient } from 'mongodb';
-import dotenv from 'dotenv';
 import path from 'path';
+import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
 
-//laten staan
-const express = require('express');
-const path = require('path');
-const dotenv = require('dotenv');
+import authRoutes from './routes/auth';
+import quizRoutes from './routes/quiz';
+import favoriteRoutes from './routes/favorites';
+import blacklistRoutes from './routes/blacklist';
+import { connectToDb } from './models/db';
 
 dotenv.config();
-
-const authRoutes = require('./routes/auth');
-const quizRoutes = require('./routes/quiz');
-const favoriteRoutes = require('./routes/favorites');
-const blacklistRoutes = require('./routes/blacklist');
-const { connectToDb } = require('./models/db');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-//middlewares:
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
-
-//hiertussen de rest typen :)
 connectToDb().then(() => console.log('Connected to MongoDB'));
 
-app.use('/auth', authRoutes);
-app.use('/quiz', quizRoutes);
-app.use('/favorites', favoriteRoutes);
-app.use('/blacklist', blacklistRoutes);
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
+
+app.use('/', authRoutes);
+app.use('/', quizRoutes);
+app.use('/', favoriteRoutes);
+app.use('/', blacklistRoutes);
 
 app.get('/', (req, res) => {
   res.render('index');
 });
+
+export default app;
 
 // 404 fallback:laten staan
 app.use((req, res) => {
