@@ -1,6 +1,15 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
+// Extend Express Request interface to include userId
+declare global {
+  namespace Express {
+    interface Request {
+      userId?: string;
+    }
+  }
+}
+
 export function verifyToken(req: Request, res: Response, next: NextFunction) {
   const token = req.cookies.token || req.headers['authorization'];
   if (!token) {
