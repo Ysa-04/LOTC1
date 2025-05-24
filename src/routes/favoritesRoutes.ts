@@ -1,6 +1,6 @@
 import express from 'express';
 import { verifyToken } from '../middleware/auth';
-import { addFavorite, getFavorites, removeFavorite } from '../controllers/favorites';
+import { addFavorite, getFavorites, removeFavorite } from '../controllers/favoritesControllers';
 
 const router = express.Router();
 
