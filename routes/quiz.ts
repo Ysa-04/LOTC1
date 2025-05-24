@@ -1,4 +1,5 @@
 import express, {Express} from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { addFavorite } from '../favorite-service';
 import { addToBlacklist, getBlacklistsByUserId } from '../blacklist-service';
 import { addHighscore } from '../highscores-service';
@@ -7,7 +8,7 @@ const router = express.Router();
 const API_URL = 'https://the-one-api.dev/v2/quote';
 const API_KEY = process.env.LOTR_API_KEY;
 
-function ensureLoggedIn(req:any, res:any, next:any) {
+function ensureLoggedIn(req: Request, res: Response, next: NextFunction) {
   if (!req.session.user) return res.redirect('/login');
   next();
 }

@@ -1,11 +1,12 @@
 // routes/user.ts
 import express from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { getFavoritesByUserId, addFavorite, removeFavorite, countFavoritesByCharacter } from '../favorite-service';
 import { getBlacklistsByUserId, addToBlacklist, removeFromBlacklist, updateBlacklistReason } from '../blacklist-service';
 
 const router = express.Router();
 
-function ensureLoggedIn(req:any, res:any, next:any) {
+function ensureLoggedIn(req: Request, res: Response, next: NextFunction) {
   if (!req.session.user) return res.redirect('/login');
   next();
 }
