@@ -3,7 +3,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
-import authRoutes from './routes/loginRoutes';
+import loginRoutes from './routes/loginRoutes';
 import quizRoutes from './routes/quizRoutes';
 import favoriteRoutes from './routes/favoritesRoutes';
 import blacklistRoutes from './routes/blacklistRoutes';
@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-app.use('/login', authRoutes);
+app.use('/login', loginRoutes);
 app.use('/quiz', quizRoutes);
 app.use('/favorites', favoriteRoutes);
 app.use('/blacklist', blacklistRoutes);

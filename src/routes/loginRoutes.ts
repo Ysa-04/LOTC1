@@ -13,6 +13,6 @@ router.get('/register', (req, res) => {
 });
 
 router.post('/login', login);
-router.post('/login/register', register);
+router.post('/register', register);
 
 export default router;
