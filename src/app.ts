@@ -42,10 +42,6 @@ app.use((req, res) => {
   res.status(404).render('404');
 });
 
-// Start de server pas na het maken van de connectie (zie connectToDb()):
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
 
 export default app;
 
