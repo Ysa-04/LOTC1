@@ -1,12 +1,16 @@
+
 import { getDb } from '../models/database';
+
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { Request, Response } from 'express';
 
 export async function register(req: Request, res: Response): Promise<void> {
+
   console.log(' Register route aangeroepen:', req.body);
   const { username, email, password } = req.body;
   const existingUser = await getDb().collection('users').findOne({ userName: username });
+
   if (existingUser) {
     res.status(400).send('User already exists');
     return;
@@ -22,6 +26,7 @@ export async function register(req: Request, res: Response): Promise<void> {
     highscore: 0
   };
 
+
   await getDb().collection('users').insertOne(newUser);
  // res.send('User registered');
  console.log(' Gebruiker toegevoegd en redirect uitgevoerd.');
@@ -30,11 +35,10 @@ export async function register(req: Request, res: Response): Promise<void> {
 }
 
 
-
-
 export async function login(req: Request, res: Response): Promise<void> {
   const { username, password } = req.body;
   const user = await getDb().collection('users').findOne({ userName: username });
+
   if (!user) {
     res.status(404).send('User not found');
     return 

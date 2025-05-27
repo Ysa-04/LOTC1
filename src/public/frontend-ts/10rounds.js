@@ -46,4 +46,3 @@ blacklistButtons.forEach((button) => {
   });
 });
 
-
