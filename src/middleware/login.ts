@@ -17,7 +17,7 @@ export function verifyToken(req: Request, res: Response, next: NextFunction) {
     return; // gewoon return; géén Response teruggeven
   }
 
-  jwt.verify(token, process.env.JWT_SECRET || '', (err, decoded: any) => {
+  jwt.verify(token, process.env.JWT_SECRET || '', (err: any, decoded: any) => {
     if (err) {
       res.status(401).send('Unauthorized');
       return;
