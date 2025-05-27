@@ -1,11 +1,21 @@
+import { ObjectId } from "mongodb";
 import { db } from '../models/database';
 import { Request, Response } from 'express';
 
 let currentScore: number = 0;
 
-export async function startQuiz(req: any, res: Response) {
-  const user = await db().collection('users').findOne({ _id: req.userId });
-  if (!user) return res.status(404).send('User not found');
+export async function startQuiz(req: Request, res: Response): Promise<void> {
+  const userId = req.userId;
+  if (!userId) {
+    res.status(401).send('Not authenticated');
+    return;
+  }
+
+  const user = await db().collection('users').findOne({ _id: new ObjectId(userId) });
+  if (!user) {
+    res.status(404).send('User not found');
+    return;
+  }
 
   const blacklistQuotes = user.blacklist?.map((item: any) => item.quote) || [];
   const allQuotes = await db().collection('quotes').find().toArray();
@@ -17,17 +27,18 @@ export async function startQuiz(req: any, res: Response) {
 
 export async function answerQuiz(req: any, res: Response) {
   const { answer, correctCharacter, correctMovie } = req.body;
-  const user = await db().collection('users').findOne({ _id: req.userId });
+  const user = await db().collection('users').findOne({ _id: new ObjectId(req.userId) });
 
   let score = 0;
   if (answer.character === correctCharacter && answer.movie === correctMovie) score = 1;
+
   else if (answer.character === correctCharacter || answer.movie === correctMovie) score = 0.5;
 
   currentScore += score;
 
   if (req.body.end) {
     await db().collection('users').updateOne(
-      { _id: req.userId },
+      { _id: new ObjectId(req.userId) },
       { $set: { highscore: Math.max(user.highscore || 0, currentScore) } }
     );
     const finalScore = currentScore;
