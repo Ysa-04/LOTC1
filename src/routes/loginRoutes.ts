@@ -4,7 +4,7 @@ import { login, register } from '../controllers/loginControllers';
 
 const router = express.Router();
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
   res.render('login'); // toont login.ejs
 });
 
