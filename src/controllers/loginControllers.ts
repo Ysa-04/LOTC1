@@ -57,4 +57,3 @@ export async function login(req: Request, res: Response): Promise<void> {
   res.cookie('token', token, { httpOnly: true });
   //res.send('Logged in');
   res.redirect('/homepage');
-}
