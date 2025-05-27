@@ -17,16 +17,21 @@ const PORT = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-connectToDb().then(() => console.log('Connected to MongoDB'));
+connectToDb().then(() => console.log('Connected to MongoDB')).catch(err => {
+  console.error('Kon niet verbinden met MongoDB:', err);
+  process.exit(1);
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.use('/', authRoutes);
-app.use('/', quizRoutes);
-app.use('/', favoriteRoutes);
-app.use('/', blacklistRoutes);
+
+app.use('/login', authRoutes);
+app.use('/quiz', quizRoutes);
+app.use('/favorites', favoriteRoutes);
+app.use('/blacklist', blacklistRoutes);
 
 app.get('/', (req, res) => {
   res.render('index');
