@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
 import loginRoutes from './routes/loginRoutes';
+import mainRoutes from './routes/mainRoutes';
 import quizRoutes from './routes/quizRoutes';
 import favoriteRoutes from './routes/favoritesRoutes';
 import blacklistRoutes from './routes/blacklistRoutes';
@@ -35,6 +36,7 @@ app.use('/login', loginRoutes);
 app.use('/quiz', quizRoutes);
 app.use('/favorites', favoriteRoutes);
 app.use('/blacklist', blacklistRoutes);
+app.use(mainRoutes);
 
 app.get('/', (req, res) => {
   res.render('index');
