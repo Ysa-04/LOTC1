@@ -37,14 +37,16 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-export default app;
-
-// 404 fallback:laten staan
+// Als geen enkele route matcht: toon een 404‐pagina (wél énkel na alle andere routes):
 app.use((req, res) => {
   res.status(404).render('404');
 });
-//laten staan (server opstarten)
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 
+// Start de server pas na het maken van de connectie (zie connectToDb()):
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
+
+export default app;
 
 
