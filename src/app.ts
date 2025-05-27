@@ -19,7 +19,6 @@ app.set('views', path.join(__dirname, 'views'));
 
 connectToDb().then(() => console.log('Connected to MongoDB')).catch(err => {
   console.error('Kon niet verbinden met MongoDB:', err);
-  process.exit(1);
 });
 
 app.use(express.static(path.join(__dirname, 'public')));

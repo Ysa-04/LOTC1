@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 import { Request, Response } from 'express';
 
 export async function register(req: Request, res: Response): Promise<void> {
+  console.log('🔁 Register route aangeroepen:', req.body);
   const { username, email, password } = req.body;
   const existingUser = await db().collection('users').findOne({ userName: username });
   if (existingUser) {
@@ -14,7 +15,7 @@ export async function register(req: Request, res: Response): Promise<void> {
   const hashedPassword = await bcrypt.hash(password, 10);
   const newUser = {
     userName: username,
-    email,
+    email: email,
     password: hashedPassword,
     favorites: [],
     blacklist: [],
@@ -22,8 +23,14 @@ export async function register(req: Request, res: Response): Promise<void> {
   };
 
   await db().collection('users').insertOne(newUser);
-  res.send('User registered');
+ // res.send('User registered');
+ console.log('✅ Gebruiker toegevoegd en redirect uitgevoerd.');
+  res.redirect('homepage');
+  // res.render('homepage'); // Redirect naar homepage na registratie
 }
+
+
+
 
 export async function login(req: Request, res: Response): Promise<void> {
   const { username, password } = req.body;
@@ -41,5 +48,6 @@ export async function login(req: Request, res: Response): Promise<void> {
 
   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || '', { expiresIn: '1h' });
   res.cookie('token', token, { httpOnly: true });
-  res.send('Logged in');
+  //res.send('Logged in');
+  res.redirect('/homepage');
 }
