@@ -5,7 +5,7 @@ dotenv.config();
 const CONNECTION_STRING = process.env.MONGO_URI || "mongodb://localhost:27017";
 const client = new MongoClient(CONNECTION_STRING);
 const dbName = "lotr";
-let db: any;
+export let db: any;
 
 export let usersCollection: Collection;
 export let quotesCollection: Collection;
