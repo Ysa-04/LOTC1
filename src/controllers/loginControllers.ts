@@ -34,10 +34,6 @@ export async function register(req: Request, res: Response): Promise<void> {
   // res.render('homepage'); // Redirect naar homepage na registratie
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f8a282d (extra)
 export async function login(req: Request, res: Response): Promise<void> {
   const { username, password } = req.body;
   const user = await getDb().collection('users').findOne({ userName: username });
@@ -57,3 +53,4 @@ export async function login(req: Request, res: Response): Promise<void> {
   res.cookie('token', token, { httpOnly: true });
   //res.send('Logged in');
   res.redirect('/homepage');
+}
