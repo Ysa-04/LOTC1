@@ -3,9 +3,12 @@ import { Request, Response } from 'express';
 
 let currentScore: number = 0;
 
-export async function startQuiz(req: any, res: Response) {
+export async function startQuiz(req: any, res: Response): Promise<void> {
   const user = await db().collection('users').findOne({ _id: req.userId });
-  if (!user) return res.status(404).send('User not found');
+  if (!user) {
+    res.status(404).send('User not found');
+    return;
+  }
 
   const blacklistQuotes = user.blacklist?.map((item: any) => item.quote) || [];
   const allQuotes = await db().collection('quotes').find().toArray();
