@@ -28,7 +28,7 @@
   <body>
     <%- include("partials/header") %>
     <main>
-      <section class="kader">
+      <!-- <section class="kader">
         <h2 class="title">Favorites</h2>
         <section class="list">
           <article class="listkader">
@@ -40,7 +40,36 @@
             <h3>Aragorn - Return of the king</h3>
           </article>
         </section>
-      </section>
+      </section> -->
+
+      <section class="kader">
+  <h2 class="title">Favorites</h2>
+
+  <section class="list">
+    <% if (favorites.length === 0) { %>
+      <p>Je hebt nog geen favoriete quotes.</p>
+    <% } else { %>
+      <% favorites.forEach(fav => { %>
+        <article class="listkader">
+          <h3>"<%= fav.quote %>"</h3>
+          <h3>
+            <a href="https://lotr.fandom.com/wiki/<%= fav.character.replace(/ /g, '_') %>" target="_blank">
+              <%= fav.character %>
+            </a>
+          </h3>
+
+          <form method="POST" action="/favorite/remove">
+            <input type="hidden" name="quote" value="<%= fav.quote %>" />
+            <button type="submit">🗑️ Verwijder</button>
+          </form>
+        </article>
+      <% }) %>
+    <% } %>
+  </section>
+</section>
+
+      
+
     </main>
     <%- include("partials/aside") %>
     <%- include("partials/footer") %>

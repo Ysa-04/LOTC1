@@ -41,7 +41,7 @@ app.use((req, res, next) => {
 
 app.use('/login', loginRoutes);
 app.use('/quiz', quizRoutes);
-app.use('/favorites', favoriteRoutes);
+app.use('/favorite', favoriteRoutes);
 app.use('/blacklist', blacklistRoutes);
 app.use('/', mainRoutes);
 

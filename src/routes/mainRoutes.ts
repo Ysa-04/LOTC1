@@ -17,9 +17,9 @@ router.get("/10-rounds", (req, res) => {
 router.get("/blacklist", (req, res) => {
     res.render("blacklist");
 });
-router.get("/favorite", (req, res) => {
-    res.render("favorite");
-});
+// router.get("/favorite", (req, res) => {
+//     res.render("favorite");
+// });
 router.get("/highscore", (req, res) => {
     res.render("highscore");
 });

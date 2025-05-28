@@ -1,9 +1,9 @@
-import { db } from '../models/database';
+import { getDb } from '../models/database';
 import { Request, Response } from 'express';
 
 export async function addFavorite(req: Request, res: Response) {
   const { quote, character } = req.body;
-  await db().collection('users').updateOne(
+  await getDb().collection('users').updateOne(
     { _id: req.userId },
     { $push: { favorites: { quote, character } } }
   );
@@ -11,13 +11,28 @@ export async function addFavorite(req: Request, res: Response) {
 }
 
 export async function getFavorites(req: Request, res: Response) {
-  const user = await db().collection('users').findOne({ _id: req.userId });
-  res.json(user.favorites || []);
+  const user = await getDb().collection('users').findOne({ _id: req.userId });
+
+  const favorites = user?.favorites || [];
+
+  // Groepeer quotes per karakter
+  const grouped = favorites.reduce((acc: any, item: any) => {
+    const char = item.character;
+    acc[char] = acc[char] || [];
+    acc[char].push(item.quote);
+    return acc;
+  }, {});
+
+  res.render("favorite", {
+    favorites,
+    grouped,
+  });
 }
+
 
 export async function removeFavorite(req: Request, res: Response) {
   const { quote } = req.body;
-  await db().collection('users').updateOne(
+  await getDb().collection('users').updateOne(
     { _id: req.userId },
     { $pull: { favorites: { quote } } }
   );
