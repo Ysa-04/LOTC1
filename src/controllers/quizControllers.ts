@@ -28,7 +28,9 @@ export async function startQuiz(req: any, res: Response): Promise<void> {
 
     // Als 10 rondes voltooid zijn, toon het resultaat
     if (req.session.round > 10) {
-      return res.render('quizResult', {
+      console.log('Ronde voorbij, score:', req.session.score);
+
+      return res.render('result', {
         score: req.session.score,
       });
     }
@@ -70,9 +72,10 @@ export async function startQuiz(req: any, res: Response): Promise<void> {
       movieOptions,
     });
   } catch (err) {
-    console.error(err);
-    res.status(500).send('Quiz kon niet geladen worden');
-  }
+  console.error('Fout in startQuiz:', err); // voeg deze toe
+  res.status(500).send('Quiz kon niet geladen worden');
+}
+
 }
 
 
