@@ -32,9 +32,9 @@ router.get("/register", (req, res) => {
 router.get("/result", (req, res) => {
     res.render("result");
 });
-/* router.get("/sudden-death", (req, res) => {
-    res.render("suddend-death");
-}); */
+router.get("/sudden-death", (req, res) => {
+    res.render("/quiz/suddendeath");
+}); 
 
 export default router;
 
