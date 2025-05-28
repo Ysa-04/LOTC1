@@ -14,12 +14,6 @@ router.get("/404", (req, res) => {
 router.get("/10-rounds", (req, res) => {
     res.redirect("/quiz/start");
 });
-router.get("/blacklist", (req, res) => {
-    res.render("blacklist");
-});
-// router.get("/favorite", (req, res) => {
-//     res.render("favorite");
-// });
 router.get("/highscore", (req, res) => {
     res.render("highscore");
 });
