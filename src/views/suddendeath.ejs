@@ -33,64 +33,69 @@
         <button id="Favorite-Button" aria-label="Add to favorites">
           <img
             id="favBut"
-            src="\assets\white_heart.png"
+            src="/assets/heart.png"
             alt="Button"
             width="35"
             height="35"
           />
         </button>
+
+        <span class="score"><%= score %>/10</span>
         <section id="quote-section">
-          <span class="score">0/10</span>
           <blockquote>
-            "Certainty of death. Small chance of success. What are we waiting
-            for?"
+            "<%= quote %>"
           </blockquote>
           <p>Wie zei het? In welke film?</p>
         </section>
+        <span class="amount"><%= round %></span>
         <button id="Blacklist-Button" aria-label="Add to blacklist">
           <img
             id="blackBut"
-            src="\assets\white_forbidden.png"
+            src="/assets/forbidden.png"
             alt="Button"
-            width="35"
-            height="35"
+            width="30"
+            height="30"
           />
         </button>
       </section>
 
-      <section>
-        <article id="karakter">
-          <h3>
-            <img
-              src="\assets\white_people_icon.png"
-              alt="person"
-              width="35"
-              height="35"
-            />
-          </h3>
-          <button id="karakter-button">Merry</button>
-          <button id="karakter-button">Gimli</button>
-          <button id="karakter-button">Legolas</button>
-        </article>
+      <form action="/quiz/answer" method="POST">
+        <section>
+          <article id="karakter">
+            <h3>
+              <img src="/assets/people.png" alt="people" width="35" height="35" />
+            </h3>
+            <% characterOptions.forEach(character => { %>
+            <div>
+              <input type="radio" name="selectedCharacter" value="<%= character._id %>" required />
+              <label><%= character.name %></label>
+            </div>
+          <% }) %>
+          </article>
 
-        <article id="film">
-          <h3>
-            <img
-              src="assets\clapperboard_white.png"
-              alt="clapboard"
-              width="35"
-              height="35"
-            />
-          </h3>
-          <button id="film-button">The Fellowship of the Ring</button>
-          <button id="film-button">The Two Towers</button>
-          <button id="film-button">The Return of the King</button>
-        </article>
-      </section>
+          <article id="film">
+            <h3>
+              <img
+                src="/assets/clapperboard.png"
+                alt="clapperboard"
+                width="35"
+                height="35"
+              />
+            </h3>
+            <% movieOptions.forEach(movie => { %>
+            <div>
+              <input type="radio" name="selectedMovie" value="<%= movie._id %>" required />
+              <label><%= movie.name %></label>
+            </div>
+          <% }) %>
+          </article>
+        </section>
 
-      <section id="submit-section">
-        <button id="Submit-button" class="next-button">Submit</button>
-      </section>
+        <section id="submit-section">
+          <button id="Submit-button" class="next-button" type="submit">Submit</button>
+        </section>
+      </form>
+    </main>
     </main>
     <%- include("paritals/aside") %>
     <%- include("partials/footer") %>

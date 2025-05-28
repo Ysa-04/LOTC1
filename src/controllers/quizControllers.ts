@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { getDb } from '../models/database';
 
 const API_BASE = 'https://the-one-api.dev/v2';
 const API_TOKEN = 'BKTeUwx4IMAM8KVDo7b0'; 
@@ -83,9 +84,7 @@ export async function startQuiz(req: any, res: Response): Promise<void> {
   console.error('Fout in startQuiz:', err); // voeg deze toe
   res.status(500).send('Quiz kon niet geladen worden');
 }
-
 }
-
 
 export async function answerQuiz(req: any, res: Response): Promise<void> {
   const { selectedCharacter, selectedMovie } = req.body;
@@ -105,3 +104,81 @@ export async function answerQuiz(req: any, res: Response): Promise<void> {
   res.redirect('/quiz/start');
 }
 
+//suddendeath
+export async function startSuddenDeath(req: any, res: Response): Promise<void> {
+  try {
+    if (!req.session.sdScore) {
+      req.session.sdScore = 0;
+    }
+
+    const quotesRes: any = await apiFetch('/quote');
+    const quote: any = shuffle(quotesRes.docs)[0];
+
+    const character = await apiFetch(`/character/${quote.character}`).then(r => r.docs[0]);
+    const movie = await apiFetch(`/movie/${quote.movie}`).then(r => r.docs[0]);
+
+    const allCharacters = await apiFetch('/character').then(r => r.docs);
+    const allMovies = await apiFetch('/movie').then(r => r.docs);
+
+    const characterOptions = shuffle([
+      character,
+      ...shuffle(allCharacters.filter((char: any) => char._id !== character._id)).slice(0, 3),
+    ]);
+
+    const movieOptions = shuffle([
+      movie,
+      ...shuffle(allMovies.filter((mov: any) => mov._id !== movie._id)).slice(0, 3),
+    ]);
+
+    req.session.sdCorrectCharacter = character._id;
+    req.session.sdCorrectMovie = movie._id;
+
+    res.render("sudden-death", {
+      score: req.session.sdScore,
+      quote: quote.dialog,
+      characterOptions,
+      movieOptions,
+    });
+  } catch (err) {
+    console.error("Fout in startSuddenDeath:", err);
+    res.status(500).send("Sudden Death kon niet gestart worden.");
+  }
+}
+
+export async function answerSuddenDeath(req: any, res: Response): Promise<void> {
+  try {
+    const { selectedCharacter, selectedMovie } = req.body;
+    const correctCharacter = req.session.sdCorrectCharacter;
+    const correctMovie = req.session.sdCorrectMovie;
+
+    const isCorrect = selectedCharacter === correctCharacter && selectedMovie === correctMovie;
+
+    if (isCorrect) {
+      req.session.sdScore += 1;
+      return res.redirect("/quiz/suddendeath");
+    }
+
+    // Fout antwoord => stop het spel
+    const db = getDb();
+    const user = await db.collection("users").findOne({ _id: req.userId });
+
+    const previousHigh = user?.suddenHighScore || 0;
+    const finalScore = req.session.sdScore;
+    const newHigh = Math.max(previousHigh, finalScore);
+
+    await db.collection("users").updateOne(
+      { _id: req.userId },
+      { $set: { suddenHighScore: newHigh } }
+    );
+
+    req.session.sdScore = 0;
+
+    res.render("sudden-death-result", {
+      score: finalScore,
+      highScore: newHigh
+    });
+  } catch (err) {
+    console.error("Fout in answerSuddenDeath:", err);
+    res.status(500).send("Sudden Death antwoordverwerking mislukt.");
+  }
+}

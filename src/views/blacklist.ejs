@@ -31,27 +31,26 @@
       <section class="kader">
         <h2 class="title">Blacklist</h2>
         <% if (blacklist.length === 0) { %>
-  <p class="p-2">Je hebt nog geen quotes op de blacklist gezet.</p>
-<% } else { %>
-  <% blacklist.forEach(item => { %>
-    <article class="listkader">
-      <h4>Q: "<%= item.quote %>"</h4>
-      <h4>
-        A:
-        <a href="https://lotr.fandom.com/wiki/<%= item.character.replace(/ /g, '_') %>" target="_blank">
-          <%= item.character %>
-        </a>
-      </h4>
-      <h5>R: <%= item.reason %></h5>
+        <p class="p-2">Je hebt nog geen quotes op de blacklist gezet.</p>
+        <% } else { %>
+          <% blacklist.forEach(item => { %>
+            <article class="listkader">
+              <h4>Q: "<%= item.quote %>"</h4>
+              <h4>
+                A:
+                <a href="https://lotr.fandom.com/wiki/<%= item.character.replace(/ /g, '_') %>" target="_blank">
+                  <%= item.character %>
+                </a>
+              </h4>
+              <h5>R: <%= item.reason %></h5>
 
-      <form method="POST" action="/blacklist/remove" style="display: inline;">
-        <input type="hidden" name="quote" value="<%= item.quote %>" />
-        <button type="submit">🗑️ Verwijder</button>
-      </form>
-    </article>
-  <% }) %>
-<% } %>
-
+              <form method="POST" action="/blacklist/remove" style="display: inline;">
+                <input type="hidden" name="quote" value="<%= item.quote %>" />
+                <button type="submit">🗑️ Verwijder</button>
+              </form>
+            </article>
+          <% }) %>
+        <% } %>
         </section>
       </section>
     </main>
