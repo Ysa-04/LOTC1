@@ -16,7 +16,6 @@ export async function getBlacklist(req: Request, res: Response) {
   res.render("blacklist", { blacklist });
 }
 
-
 export async function removeBlacklist(req: Request, res: Response) {
   const { quote } = req.body;
   await getDb().collection('users').updateOne(

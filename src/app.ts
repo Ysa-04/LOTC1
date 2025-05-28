@@ -50,7 +50,6 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-// Als geen enkele route matcht: toon een 404‐pagina (wél énkel na alle andere routes):
 app.use((req, res) => {
   res.status(404).render('404');
 });

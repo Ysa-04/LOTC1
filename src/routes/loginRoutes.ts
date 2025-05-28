@@ -5,11 +5,11 @@ import { login, register } from '../controllers/loginControllers';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('login'); // toont login.ejs
+  res.render('login'); 
 });
 
 router.get('/register', (req, res) => {
-  res.render('register'); // toont login.ejs
+  res.render('register');
 });
 
 router.post('/login', login);

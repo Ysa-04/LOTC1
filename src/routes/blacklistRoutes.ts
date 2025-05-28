@@ -9,10 +9,9 @@ import {
 
 const router = express.Router();
 
-router.use(verifyToken);
-router.get('/', getBlacklist);
-router.post('/', addBlacklist);
-router.delete('/', removeBlacklist);
-router.put('/', updateBlacklist);
+router.get('/', verifyToken, getBlacklist);
+router.post('/add', verifyToken, addBlacklist);
+router.post('/remove', verifyToken, removeBlacklist);
+router.post('/update', verifyToken, updateBlacklist);
 
 export default router;

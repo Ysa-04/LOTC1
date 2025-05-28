@@ -15,7 +15,6 @@ export async function getFavorites(req: Request, res: Response) {
 
   const favorites = user?.favorites || [];
 
-  // Groepeer quotes per karakter
   const grouped = favorites.reduce((acc: any, item: any) => {
     const char = item.character;
     acc[char] = acc[char] || [];
@@ -28,7 +27,6 @@ export async function getFavorites(req: Request, res: Response) {
     grouped,
   });
 }
-
 
 export async function removeFavorite(req: Request, res: Response) {
   const { quote } = req.body;

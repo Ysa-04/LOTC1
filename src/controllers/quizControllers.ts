@@ -14,7 +14,7 @@ async function apiFetch(endpoint: string) {
   });
   if (!res.ok) {
     const errorText = await res.text();
-    console.error('API response:', errorText); // log inhoud bij fout
+    console.error('API response:', errorText);
     throw new Error(`API fout op ${endpoint}`);
   }
   return res.json();
@@ -24,14 +24,12 @@ export async function startQuiz(req: any, res: Response): Promise<void> {
   console.log('Quiz gestart');
   console.log('Huidige sessie:', req.session);
   try {
-    // Initialiseer sessie-waarden indien nodig
     if (!req.session.round) {
       req.session.round = 1;
       req.session.score = 0;
       console.log('Nieuwe quizsessie gestart');
     }
 
-    // Als 10 rondes voltooid zijn, toon het resultaat
     if (req.session.round > 10) {
       console.log('Ronde voorbij, score:', req.session.score);
       return res.render('result', {
@@ -39,7 +37,6 @@ export async function startQuiz(req: any, res: Response): Promise<void> {
       });
     }
 
-    // Haal quotes, karakters en films op
     console.log('Quotes ophalen...');
     const quotesRes: any = await apiFetch('/quote');
     const quote: any = shuffle(quotesRes.docs)[0];
@@ -56,7 +53,6 @@ export async function startQuiz(req: any, res: Response): Promise<void> {
     const allCharactersRes: any = await apiFetch('/character');
     const allMoviesRes: any = await apiFetch('/movie');
 
-    // Genereer antwoordopties
     const characterOptions = shuffle([
       correctCharacter,
       ...shuffle(allCharactersRes.docs.filter((c: any) => c._id !== correctCharacter._id)).slice(0, 3),
@@ -67,11 +63,9 @@ export async function startQuiz(req: any, res: Response): Promise<void> {
       ...shuffle(allMoviesRes.docs.filter((m: any) => m._id !== correctMovie._id)).slice(0, 3),
     ]);
 
-    // Sla juiste antwoorden op in sessie
     req.session.correctCharacter = correctCharacter._id;
     req.session.correctMovie = correctMovie._id;
 
-    // Render quiz pagina
     console.log('Ronde', req.session.round, 'start met score', req.session.score);
     res.render('10-rounds', {
       round: req.session.round,
@@ -81,7 +75,7 @@ export async function startQuiz(req: any, res: Response): Promise<void> {
       movieOptions,
     });
   } catch (err) {
-  console.error('Fout in startQuiz:', err); // voeg deze toe
+  console.error('Fout in startQuiz:', err);
   res.status(500).send('Quiz kon niet geladen worden');
 }
 }
@@ -158,7 +152,6 @@ export async function answerSuddenDeath(req: any, res: Response): Promise<void> 
       return res.redirect("/quiz/suddendeath");
     }
 
-    // Fout antwoord => stop het spel
     const db = getDb();
     const user = await db.collection("users").findOne({ _id: req.userId });
 

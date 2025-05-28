@@ -23,10 +23,8 @@ export async function register(req: Request, res: Response): Promise<void> {
   };
 
   await getDb().collection('users').insertOne(newUser);
- // res.send('User registered');
- console.log(' Gebruiker toegevoegd en redirect uitgevoerd.');
+  console.log(' Gebruiker toegevoegd en redirect uitgevoerd.');
   res.redirect('/homepage');
-  // res.render('homepage'); // Redirect naar homepage na registratie
 }
 
 export async function login(req: Request, res: Response): Promise<void> {
@@ -45,6 +43,5 @@ export async function login(req: Request, res: Response): Promise<void> {
 
   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || '', { expiresIn: '1h' });
   res.cookie('token', token, { httpOnly: true });
-  //res.send('Logged in');
   res.redirect('/homepage');
 }
