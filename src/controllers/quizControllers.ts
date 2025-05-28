@@ -9,11 +9,12 @@ function shuffle<T>(array: T[]): T[] {
 
 async function apiFetch(endpoint: string) {
   const res = await fetch(`${API_BASE}${endpoint}`, {
-    headers: { Authorization: API_TOKEN },
+    headers: { Authorization: `Bearer ${API_TOKEN}` },
   });
   if (!res.ok) throw new Error(`API fout op ${endpoint}`);
   return res.json();
 }
+
 
 export async function startQuiz(req: any, res: Response): Promise<void> {
   console.log('Quiz gestart');

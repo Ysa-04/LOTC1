@@ -43,7 +43,7 @@ app.use('/login', loginRoutes);
 app.use('/quiz', quizRoutes);
 app.use('/favorites', favoriteRoutes);
 app.use('/blacklist', blacklistRoutes);
-app.use(mainRoutes);
+app.use('/', mainRoutes);
 
 
 app.get('/', (req, res) => {

@@ -4,7 +4,8 @@ import { startQuiz, answerQuiz } from '../controllers/quizControllers';
 
 const router = express.Router();
 
-router.get('/quiz/start', verifyToken, startQuiz);
-router.post('/quiz/answer', verifyToken, answerQuiz);
+// Deze worden beschikbaar als /quiz/start en /quiz/answer
+router.get('/start', verifyToken, startQuiz);
+router.post('/answer', verifyToken, answerQuiz);
 
 export default router;
