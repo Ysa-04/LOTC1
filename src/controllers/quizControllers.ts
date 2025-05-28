@@ -53,7 +53,7 @@ export async function startQuiz(req: any, res: Response): Promise<void> {
     req.session.correctCharacter = correctCharacter._id;
     req.session.correctMovie = correctMovie._id;
 
-    res.render('quiz', {
+    res.render('10-rounds', {
       round: req.session.round,
       quote: quote.dialog,
       characterOptions,
