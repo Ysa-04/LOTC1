@@ -28,8 +28,14 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(session({
+  secret: 'geheime sleutel',
+  resave: false,
+  saveUninitialized: true,
+}));
+
 app.use((req, res, next) => {
-  console.log('➡️ Route aangeroepen:', req.method, req.url);
+  console.log('Route aangeroepen:', req.method, req.url);
   next();
 });
 
@@ -38,6 +44,7 @@ app.use('/quiz', quizRoutes);
 app.use('/favorites', favoriteRoutes);
 app.use('/blacklist', blacklistRoutes);
 app.use(mainRoutes);
+
 
 app.get('/', (req, res) => {
   res.render('index');
@@ -48,11 +55,7 @@ app.use((req, res) => {
   res.status(404).render('404');
 });
 
-app.use(session({
-  secret: 'geheime sleutel',
-  resave: false,
-  saveUninitialized: true,
-}));
+
 
 
 
