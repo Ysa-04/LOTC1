@@ -8,15 +8,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="nofollow" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/homepage.css">
-    <script src="javascript/hamburger-menu.js" defer></script>
+    <script src="src/public/frontend-ts/navigation.js" defer></script>
     <link rel="icon" type="image/x-icon" href="/assets/lord-of-the-coders-logo.png">
     <audio autoplay loop>
         <!-- https://archive.org/details/TheLordOfTheRings_OST -->
         <source src="/assets/theshire.mp3" type="audio/mpeg">
     </audio>
 </head>
+<style>#sidebar.collapsed {
+        width: 0 !important;
+        overflow: hidden;
+    }</style>
 <body>
+    
+
     <%- include("partials/header") %>
+    <%- include("partials/aside") %>
     <main>
         <h2>Kies je quiz</h2>
             <section>
@@ -44,5 +51,5 @@
                 </article>
             </section>
     </main>
-    <%- include("partials/aside") %>
+  
     <%- include("partials/footer") %>

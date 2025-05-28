@@ -11,10 +11,13 @@ async function apiFetch(endpoint: string) {
   const res = await fetch(`${API_BASE}${endpoint}`, {
     headers: { Authorization: `Bearer ${API_TOKEN}` },
   });
-  if (!res.ok) throw new Error(`API fout op ${endpoint}`);
+  if (!res.ok) {
+    const errorText = await res.text();
+    console.error('API response:', errorText); // log inhoud bij fout
+    throw new Error(`API fout op ${endpoint}`);
+  }
   return res.json();
 }
-
 
 export async function startQuiz(req: any, res: Response): Promise<void> {
   console.log('Quiz gestart');
@@ -24,26 +27,30 @@ export async function startQuiz(req: any, res: Response): Promise<void> {
     if (!req.session.round) {
       req.session.round = 1;
       req.session.score = 0;
+      console.log('Nieuwe quizsessie gestart');
     }
 
     // Als 10 rondes voltooid zijn, toon het resultaat
     if (req.session.round > 10) {
       console.log('Ronde voorbij, score:', req.session.score);
-
       return res.render('result', {
-        score: req.session.score,
+        score: req.session?.score ?? 0,
       });
     }
 
     // Haal quotes, karakters en films op
+    console.log('Quotes ophalen...');
     const quotesRes: any = await apiFetch('/quote');
     const quote: any = shuffle(quotesRes.docs)[0];
+    console.log('Quote geselecteerd:', quote.dialog);
 
     const characterRes: any = await apiFetch(`/character/${quote.character}`);
     const correctCharacter = characterRes.docs[0];
+    console.log('Juiste karakter:', correctCharacter.name);
 
     const movieRes: any = await apiFetch(`/movie/${quote.movie}`);
     const correctMovie = movieRes.docs[0];
+    console.log('Juiste film:', correctMovie.name);
 
     const allCharactersRes: any = await apiFetch('/character');
     const allMoviesRes: any = await apiFetch('/movie');
@@ -64,6 +71,7 @@ export async function startQuiz(req: any, res: Response): Promise<void> {
     req.session.correctMovie = correctMovie._id;
 
     // Render quiz pagina
+    console.log('Ronde', req.session.round, 'start met score', req.session.score);
     res.render('10-rounds', {
       round: req.session.round,
       score: req.session.score,
@@ -96,3 +104,4 @@ export async function answerQuiz(req: any, res: Response): Promise<void> {
   req.session.round++;
   res.redirect('/quiz/start');
 }
+

@@ -35,14 +35,60 @@ filmButtons.forEach((button) => {
 });
 
 favoriteButtons.forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", async () => {
     changeImage(button);
+
+    const quote = document.querySelector('blockquote').innerText;
+    const selectedCharacterInput = document.querySelector('input[name="selectedCharacter"]:checked');
+    if (!selectedCharacterInput) return alert("Selecteer eerst een karakter.");
+
+    const characterLabel = selectedCharacterInput.nextElementSibling.textContent.trim();
+
+    try {
+      const res = await fetch('/favorites/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quote, character: characterLabel }),
+      });
+
+      if (res.ok) {
+        alert("Quote toegevoegd aan favorieten.");
+      } else {
+        alert("Fout bij toevoegen aan favorieten.");
+      }
+    } catch (error) {
+      console.error("Error tijdens favorite toevoegen:", error);
+    }
   });
 });
 
 blacklistButtons.forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", async () => {
     changeImage10(button);
+
+    const quote = document.querySelector('blockquote').innerText;
+    const selectedCharacterInput = document.querySelector('input[name="selectedCharacter"]:checked');
+    if (!selectedCharacterInput) return alert("Selecteer eerst een karakter.");
+
+    const characterLabel = selectedCharacterInput.nextElementSibling.textContent.trim();
+    const reason = prompt("Waarom wil je deze quote blacklisten?");
+    if (!reason) return;
+
+    try {
+      const res = await fetch('/blacklist/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quote, character: characterLabel, reason }),
+      });
+
+      if (res.ok) {
+        alert("Quote toegevoegd aan blacklist.");
+      } else {
+        alert("Fout bij toevoegen aan blacklist.");
+      }
+    } catch (error) {
+      console.error("Error tijdens blacklist toevoegen:", error);
+    }
   });
 });
 
