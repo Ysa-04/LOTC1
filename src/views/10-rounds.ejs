@@ -63,11 +63,12 @@
             <h3>
               <img src="/assets/people.png" alt="people" width="35" height="35" />
             </h3>
-            <% characterOptions.forEach(opt => { %>
-              <button type="submit" name="selectedCharacter" value="<%= opt._id %>" class="btn btn-secondary karakter-button">
-                <%= opt.name %>
-              </button>
-            <% }) %>
+            <% characterOptions.forEach(character => { %>
+            <div>
+              <input type="radio" name="selectedCharacter" value="<%= character._id %>" required />
+              <label><%= character.name %></label>
+            </div>
+          <% }) %>
           </article>
 
           <article id="film">
@@ -79,11 +80,12 @@
                 height="35"
               />
             </h3>
-            <% movieOptions.forEach(opt => { %>
-              <button type="submit" name="selectedMovie" value="<%= opt._id %>" class="btn btn-secondary film-button">
-                <%= opt.name %>
-              </button>
-            <% }) %>
+            <% movieOptions.forEach(movie => { %>
+            <div>
+              <input type="radio" name="selectedMovie" value="<%= movie._id %>" required />
+              <label><%= movie.name %></label>
+            </div>
+          <% }) %>
           </article>
         </section>
 

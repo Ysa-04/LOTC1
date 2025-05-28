@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import session from 'express-session';
 
 import loginRoutes from './routes/loginRoutes';
 import mainRoutes from './routes/mainRoutes';
@@ -46,6 +47,13 @@ app.get('/', (req, res) => {
 app.use((req, res) => {
   res.status(404).render('404');
 });
+
+app.use(session({
+  secret: 'geheime sleutel',
+  resave: false,
+  saveUninitialized: true,
+}));
+
 
 
 export default app;
